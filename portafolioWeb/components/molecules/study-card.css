@@ -1,61 +1,66 @@
-/* ================================================================= */
-/* MOLÉCULA: STUDY CARD                                            */
-/* ================================================================= */
+/* components/molecules/study-card.css */
 
 .study-card {
-    background-color: var(--color-highlight);
-    border-radius: 8px;
+    /* El efecto glassmorphism se mantiene, pero ahora actuará sobre el fondo sólido */
+    background: rgba(255, 255, 255, 0.5); /* Un poco más opaco para legibilidad sobre el color claro */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    
+    border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
-    border: 1px solid #e0d9cf;
     height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .study-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
 }
 
-.study-card-title {
-    font-family: var(--font-secondary);
+.study-card h3 {
+    font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1.5rem;
-    color: var(--color-dark-green);
-    margin-bottom: 1.5rem;
+    color: var(--color-bg-dark);
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-.study-table {
-    font-size: 0.95rem;
-    color: var(--color-text);
+/* ======================================== */
+/* ¡NUEVOS ESTILOS PARA LA TABLA TRANSPARENTE! */
+/* ======================================== */
+
+/* Hacemos que la tabla no tenga fondo propio */
+.study-card .table {
+    background-color: transparent !important; /* Importante para sobreescribir Bootstrap */
 }
 
-.study-table thead th {
+/* Estilo para los encabezados (NIVEL, INSTITUCIÓN, AÑO) */
+.study-card th {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo translúcido sutil para el header */
     border: none;
-    color: var(--color-dark-green);
+    color: var(--color-bg-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-.study-table tbody tr {
-    border-top: 1px solid #e0d9cf;
-}
-
-.study-table td {
-    padding: 1rem 0.5rem;
+/* Estilo para las celdas de datos */
+.study-card td {
+    padding: 1.2rem 0.5rem; /* Más espacio vertical para un look más limpio */
     vertical-align: middle;
+    border: none;
+    border-top: 1px solid rgba(51, 66, 49, 0.2); /* Borde divisor muy sutil */
+    color: var(--color-bg-dark); /* Aseguramos que el texto sea legible */
 }
 
-.study-table .level-cell {
-    font-weight: 600;
-}
-
-.icon-level {
+.study-card .icon-level {
     color: var(--color-primary);
     margin-right: 0.75rem;
     font-size: 1.2rem;
-    width: 20px; /* Alinea el texto */
+    width: 20px;
     text-align: center;
 }

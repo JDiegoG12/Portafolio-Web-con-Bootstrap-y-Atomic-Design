@@ -1,48 +1,36 @@
-/* ================================================================= */
-/* ORGANISMO: HEADER                                               */
-/* ================================================================= */
-
+/* components/organisms/header.css */
 .header-container {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
-    background-color: var(--color-background);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease-in-out;
+    z-index: 1030;
+    background-color: transparent;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
 }
-
-.navbar-custom {
+.header-container.scrolled {
+    background-color: rgba(255, 255, 255, 0.85); /* <-- ESTE ES EL CAMBIO */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+.navbar {
     min-height: var(--navbar-height);
 }
-
-/* Estilo del "Logo" (Átomo) */
 .navbar-brand-custom {
-    font-family: var(--font-primary);
+    font-family: var(--font-artistic);
     font-size: 2.5rem;
-    color: var(--color-dark-green);
-    font-weight: normal;
+    color: var(--color-bg-dark);
+    text-decoration: none;
 }
-
-.navbar-brand-custom:hover {
-    color: var(--color-primary);
-}
-
-/* Estilo de los Enlaces de Navegación (Molécula) */
-.nav-item {
-    margin: 0 0.5rem;
-}
-
 .nav-link {
-    color: var(--color-dark-green);
-    font-size: 1rem;
+    color: var(--color-bg-dark);
     font-weight: 600;
-    padding: 0.5rem 0;
-    position: relative;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+    padding: 0.5rem 0;
+    margin: 0 0.75rem;
 }
-
 .nav-link::after {
     content: '';
     position: absolute;
@@ -51,38 +39,17 @@
     width: 0;
     height: 2px;
     background-color: var(--color-primary);
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease;
 }
-
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
 }
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--color-dark-green);
-}
-
-/* Estilo del Botón Hamburguesa (Átomo) */
 .navbar-toggler {
     border: none;
     font-size: 1.5rem;
-    color: var(--color-dark-green);
+    color: var(--color-bg-dark);
 }
-
 .navbar-toggler:focus {
     box-shadow: none;
-}
-
-/* Estilos para cuando el menú está colapsado en móvil */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        padding: 1rem 0;
-        text-align: center;
-    }
-
-    .nav-item {
-        margin: 0.5rem 0;
-    }
 }

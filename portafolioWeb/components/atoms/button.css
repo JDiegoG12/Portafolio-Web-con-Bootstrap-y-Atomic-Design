@@ -1,0 +1,15 @@
+.btn-custom {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+.btn-custom:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}

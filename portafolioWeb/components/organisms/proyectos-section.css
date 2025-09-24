@@ -1,0 +1,6 @@
+#proyectos {
+    background-color: var(--color-bg-light);
+    background-image: url('assets/images/paginaInicio.png');
+    background-size: cover;
+    background-attachment: fixed;
+}

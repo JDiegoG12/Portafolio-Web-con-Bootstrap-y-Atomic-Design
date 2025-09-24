@@ -1,108 +1,102 @@
-/* ================================================================= */
-/* ORGANISMO: SECCIÓN INICIO                                       */
-/* ================================================================= */
+/* components/organisms/inicio-section.css */
 
-#inicio, .carousel, .carousel-item {
-    height: calc(100vh - var(--navbar-height));
+/* Altura de la sección reducida a 90% del alto de la pantalla */
+#inicio, #inicio .carousel, #inicio .carousel-item {
+    height: 90vh; 
 }
 
-.carousel-item {
+#inicio .carousel-item {
     position: relative;
 }
-
-.carousel-item::after {
+#inicio .carousel-item::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
-
-.carousel-item img.d-block {
+#inicio .carousel-item img.d-block {
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
 
-.carousel-caption {
+#inicio .carousel-caption {
+    position: absolute;
     top: 0;
-    bottom: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 800px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
 }
 
-/* Molécula: Contenido del Hero */
+/* ======================================= */
+/*           CAMBIOS DE TAMAÑO             */
+/* ======================================= */
+
 .personal-photo {
-    width: 150px;
-    height: 150px;
+    width: 170px; /* ANTES: 150px */
+    height: 170px; /* ANTES: 150px */
     border-radius: 50%;
-    border: 4px solid var(--color-highlight);
+    border: 4px solid var(--color-white);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin: 0 auto 1.5rem;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
 }
-
-.hero-title {
-    font-family: var(--font-secondary);
-    font-weight: 600;
-    font-size: 3.5rem;
-    color: var(--color-highlight);
+.hero-text-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem; /* ANTES: 2.5rem */
+    max-width: 720px; /* ANTES: 650px */
+    margin: 0 auto;
 }
-
-.hero-subtitle {
-    color: var(--color-highlight);
-    opacity: 0.8;
+#inicio .hero-title {
+    font-family: var(--font-artistic);
+    font-weight: normal;
+    font-size: 5.2rem; /* ANTES: 4.5rem */
+    color: var(--color-white);
+}
+#inicio .hero-subtitle {
+    color: var(--color-white);
+    opacity: 0.9;
     margin-bottom: 1.5rem;
 }
-
-.hero-description {
-    font-size: 1.1rem;
+#inicio .hero-description {
+    font-size: 1.2rem; /* ANTES: 1.1rem */
     line-height: 1.7;
-    font-weight: 400;
-    color: var(--color-highlight);
-    max-width: 600px;
+    color: var(--color-white);
+    margin: 0 auto;
 }
 
-/* Átomos: Controles e Indicadores del Carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-    z-index: 3;
-}
 
-.carousel-indicators [data-bs-target] {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--color-highlight);
-    opacity: 0.5;
-    border: none;
-    margin: 0 8px;
-    transition: opacity 0.3s ease;
-}
-
-.carousel-indicators .active {
-    opacity: 1;
-}
-
-/* Media Query para ajustar tamaños en pantallas pequeñas */
+/* ======================================== */
+/*  MEDIA QUERY RESPONSIVE (SIN CAMBIOS)    */
+/* ======================================== */
 @media (max-width: 767.98px) {
-    .hero-title {
-        font-size: 2.5rem;
+    #inicio .hero-title {
+        font-size: 3rem;
     }
-
     .personal-photo {
         width: 120px;
         height: 120px;
     }
-
-    .hero-description {
+    .hero-text-box {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+    #inicio .hero-description {
         font-size: 1rem;
     }
 }

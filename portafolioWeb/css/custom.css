@@ -1,43 +1,33 @@
-/* ================================================================= */
-/* 1. CONFIGURACIÓN GENERAL E IMPORTACIONES                        */
-/* ================================================================= */
-
-/* Importación de las fuentes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
-
-/* Importación de nuestros componentes */
-@import url('../components/atoms/section-title.css');
-@import url('../components/molecules/study-card.css');
-@import url('../components/organisms/header.css');
-@import url('../components/organisms/inicio-section.css');
-@import url('../components/organisms/estudios-section.css');
-
-
-/* 
-  'Great Vibes' para el estilo caligráfico.
-  'Lora' para el estilo serif editorial.
-*/
-
+/* css/custom.css */
 :root {
-    /* Paleta de Colores */
-    --color-background: #FDF6EC; /* Marfil suave */
-    --color-text: #4B5944;       /* Oliva oscuro para texto principal */
-    --color-primary: #89A9C8;     /* Azul pastel para acentos */
-    --color-dark-green: #264027;  /* Verde bosque para títulos/links */
-    --color-highlight: #FFFFFF;   /* Blanco para resaltar */
-    --color-warm: #E1A85B;        /* Naranja cálido para detalles */
-
-    /* Tipografía */
-    --font-primary: 'Great Vibes', cursive;
-    --font-secondary: 'Lora', serif;
-
-    /* Otros */
-    --navbar-height: 70px;
+    --color-bg-light: #FAF8F5;
+    --color-bg-dark: #334231;
+    --color-primary: #869684;
+    --color-text: #5c5c5c;
+    --color-white: #FFFFFF;
+    --font-primary: 'Poppins', sans-serif;
+    --font-artistic: 'Great Vibes', cursive;
+    --navbar-height: 80px;
 }
-
 body {
-    font-family: var(--font-secondary);
-    background-color: var(--color-background);
+    font-family: var(--font-primary);
+    /* ======================================== */
+    /* ¡CAMBIO CLAVE! APLICAMOS EL FONDO CON TEXTURA AQUÍ */
+    /* ======================================== */
+    background-image: url('../assets/images/paginaInicio.png'); /* Asegúrate que la ruta sea correcta desde css/ */
+    background-size: cover;
+    background-attachment: fixed; /* Mantenemos el efecto parallax */
+    background-position: center;
     color: var(--color-text);
-    padding-top: var(--navbar-height);
 }
+.section-container {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.table {
+    border-color: transparent;
+}
+
