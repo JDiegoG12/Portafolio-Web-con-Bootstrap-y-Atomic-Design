@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio | Sofi y Diego</title>
-    
+
     <!-- LIBRERÍAS EXTERNAS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- =================================================================== -->
@@ -15,18 +17,26 @@
     <!-- =================================================================== -->
     <!-- 1. Global y Variables -->
     <link rel="stylesheet" href="css/custom.css">
-    
+
     <!-- 2. Átomos (Las piezas más pequeñas) -->
     <link rel="stylesheet" href="components/atoms/button.css">
     <link rel="stylesheet" href="components/atoms/form-input.css">
     <link rel="stylesheet" href="components/atoms/section-title.css">
-    
+    <link rel="stylesheet" href="components/atoms/tag.css">
+    <link rel="stylesheet" href="components/atoms/social-icon.css">
+
     <!-- 3. Moléculas (Grupos de átomos) -->
     <link rel="stylesheet" href="components/molecules/study-card.css">
+    <link rel="stylesheet" href="components/molecules/styled-table.css">
     <link rel="stylesheet" href="components/molecules/hobby-card.css">
+    <link rel="stylesheet" href="components/molecules/image-overlay.css">
     <link rel="stylesheet" href="components/molecules/project-card.css">
-    <link rel="stylesheet" href="components/molecules/contact-info.css">
-    
+    <link rel="stylesheet" href="components/molecules/contact-form.css">
+    <link rel="stylesheet" href="components/molecules/contact-list.css">
+    <link rel="stylesheet" href="components/molecules/modal.css">
+    <link rel="stylesheet" href="components/molecules/toast.css">
+    <link rel="stylesheet" href="components/molecules/footer-contact-info.css">
+
     <!-- 4. Organismos (Secciones completas) -->
     <link rel="stylesheet" href="components/organisms/header.css">
     <link rel="stylesheet" href="components/organisms/inicio-section.css">
@@ -36,13 +46,15 @@
     <link rel="stylesheet" href="components/organisms/contacto-section.css">
     <link rel="stylesheet" href="components/organisms/footer.css">
 </head>
+
 <body>
 
     <header class="header-container">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand-custom" href="#inicio">[Sofi y Diego]</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><i class="fas fa-bars"></i></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><i
+                        class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
@@ -58,8 +70,8 @@
 
     <main>
         <!-- ================================================================= -->
-        <!-- SECCIÓN 1: INICIO (CORREGIDA Y MEJORADA)                          -->
-
+        <!-- SECCIÓN 1: INICIO                         -->
+        <!-- ================================================================= -->
         <section id="inicio">
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -73,14 +85,16 @@
                         <img src="assets/images/paginaInicio2.png" class="d-block w-100" alt="Fondo Sofía">
                         <!-- CAMBIO: Clases de Bootstrap para centrado vertical perfecto -->
                         <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-                            
+
                             <!-- CAMBIO: Convertido de <img> a <div> y se usa la imagen de fondo -->
-                            <div class="personal-photo" style="background-image: url('assets/images/paginaInicio2.png')"></div>
-                            
+                            <div class="personal-photo"
+                                style="background-image: url('assets/images/paginaInicio2.png')"></div>
+
                             <div class="hero-text-box">
                                 <h2 class="hero-title">Sofía Arango Yanza</h2>
                                 <p class="hero-subtitle">Enero 11 del 2006</p>
-                                <p class="hero-description">Mi aspiración es ser una desarrolladora full stack, fortaleciendo mis conocimientos en IA.</p>
+                                <p class="hero-description">Mi aspiración es ser una desarrolladora full stack,
+                                    fortaleciendo mis conocimientos en IA.</p>
                             </div>
 
                         </div>
@@ -93,107 +107,146 @@
                         <div class="carousel-caption d-flex flex-column justify-content-center h-100">
 
                             <!-- CAMBIO: Convertido de <img> a <div> y se usa la imagen de fondo -->
-                            <div class="personal-photo" style="background-image: url('assets/images/paginaInicio.png')"></div>
+                            <div class="personal-photo" style="background-image: url('assets/images/paginaInicio.png')">
+                            </div>
 
                             <div class="hero-text-box">
                                 <h2 class="hero-title">Juan Diego Gómez</h2>
                                 <p class="hero-subtitle">Julio 25 2004</p>
-                                <p class="hero-description">Aspiro a convertirme en un referente en mi área, aportando soluciones creativas y eficientes.</p>
+                                <p class="hero-description">Aspiro a convertirme en un referente en mi área, aportando
+                                    soluciones creativas y eficientes.</p>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
             </div>
         </section>
-                <!-- ================================================================= -->
-        <!-- SECCIÓN 1: INICIO (CORREGIDA Y MEJORADA)                          -->
-
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 2: ESTUDIOS                             -->
+        <!-- ================================================================= -->
         <section id="estudios" class="section-container">
-    <div class="container">
-        <h2 class="section-title">Nuestra Formación</h2>
-        <div class="row g-4 justify-content-center mt-4">
+            <div class="container">
+                <h2 class="section-title">Nuestra Formación</h2>
+                <div class="row g-4 justify-content-center mt-4">
 
-            <!-- Tarjeta de Sofía -->
-            <div class="col-lg-6">
-                <div class="study-card">
-                    <h3>Formación de Sofía</h3>
-                    <table class="table">
-                        <!-- ¡IMPORTANTE! Re-agregamos los encabezados de la tabla -->
-                        <thead>
-                            <tr>
-                                <th>Nivel</th>
-                                <th>Institución</th>
-                                <th>Año</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
-                                <td><strong>San José</strong></td>
-                                <td>2011-2015</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
-                                <td><strong>Los Andes</strong></td>
-                                <td>2015-2021</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
-                                <td><strong>U. del Cauca</strong></td>
-                                <td>2022-Actual.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- Tarjeta de Sofía -->
+                    <div class="col-lg-6">
+                        <div class="study-card">
+                            <h3>Formación de Sofía</h3>
+                            <table class="table styled-table">
+                                <!-- ¡IMPORTANTE! Re-agregamos los encabezados de la tabla -->
+                                <thead>
+                                    <tr>
+                                        <th>Nivel</th>
+                                        <th>Institución</th>
+                                        <th>Año</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
+                                        <td><strong>San José</strong></td>
+                                        <td>2011-2015</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
+                                        <td><strong>Los Andes</strong></td>
+                                        <td>2015-2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
+                                        <td><strong>U. del Cauca</strong></td>
+                                        <td>2022-Actual.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Diego -->
+                    <div class="col-lg-6">
+                        <div class="study-card">
+                            <h3>Formación de Diego</h3>
+                            <table class="table styled-table">
+                                <!-- ¡IMPORTANTE! Re-agregamos los encabezados de la tabla -->
+                                <thead>
+                                    <tr>
+                                        <th>Nivel</th>
+                                        <th>Institución</th>
+                                        <th>Año</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
+                                        <td><strong>La Concentración</strong></td>
+                                        <td>2010-2014</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
+                                        <td><strong>Bto Patía</strong></td>
+                                        <td>2014-2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
+                                        <td><strong>U. del Cauca</strong></td>
+                                        <td>2021-Actual.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <!-- Tarjeta de Diego -->
-            <div class="col-lg-6">
-                <div class="study-card">
-                    <h3>Formación de Diego</h3>
-                    <table class="table">
-                        <!-- ¡IMPORTANTE! Re-agregamos los encabezados de la tabla -->
-                        <thead>
-                            <tr>
-                                <th>Nivel</th>
-                                <th>Institución</th>
-                                <th>Año</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
-                                <td><strong>La Concentración</strong></td>
-                                <td>2010-2014</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
-                                <td><strong>Bto Patía</strong></td>
-                                <td>2014-2021</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
-                                <td><strong>U. del Cauca</strong></td>
-                                <td>2021-Actual.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+        </section>
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 3: PASATIEMPOS                          -->
+        <!-- ================================================================= -->
         <section id="pasatiempos" class="section-container">
             <div class="container">
                 <h2 class="section-title">Pasatiempos</h2>
                 <div class="row g-4 justify-content-center mt-4">
-                    <div class="col-md-6 col-lg-5"><div class="hobby-card" style="background-image: url('https://placehold.co/600x800/869684/white?text=Diseño');"><div class="hobby-card-overlay"><h4>Diseño Gráfico</h4></div></div></div>
-                    <div class="col-md-6 col-lg-5"><div class="hobby-card" style="background-image: url('https://placehold.co/600x800/334231/white?text=Gaming');"><div class="hobby-card-overlay"><h4>Gaming</h4></div></div></div>
+
+                    <!-- Tarjeta 1: Amistades -->
+                    <div class="col-md-6 col-lg-5">
+                        <div class="hobby-card" style="background-image: url('assets/images/pasatiempo1.png');">
+                            <!-- CAMBIO DE CLASE AQUÍ -->
+                            <div class="image-overlay">
+                                <h4>Compartir con Amigos</h4>
+                                <p>Disfrutamos de reuniones y salidas que fortalecen nuestros lazos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Deporte -->
+                    <div class="col-md-6 col-lg-5">
+                        <div class="hobby-card" style="background-image: url('assets/images/pasatiempo2.png');">
+                            <!-- CAMBIO DE CLASE AQUÍ -->
+                            <div class="image-overlay">
+                                <h4>Hacer Deporte</h4>
+                                <p>Nos mantenemos activos y saludables practicando nuestros deportes favoritos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Videojuegos -->
+                    <div class="col-md-6 col-lg-5">
+                        <div class="hobby-card" style="background-image: url('assets/images/pasatiempo3.png');">
+                            <!-- CAMBIO DE CLASE AQUÍ -->
+                            <div class="image-overlay">
+                                <h4>Videojuegos</h4>
+                                <p>Exploramos mundos virtuales y disfrutamos de desafíos estratégicos en nuestro tiempo
+                                    libre.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -201,40 +254,287 @@
         <section id="proyectos" class="section-container">
             <div class="container">
                 <h2 class="section-title">Proyectos Destacados</h2>
-                <div class="row g-4 mt-4">
-                    <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://placehold.co/600x400/D3D3D3/334231?text=Branding" alt="Proyecto 1"><div class="project-card-body"><h4>Branding "Natura"</h4><p>Identidad de marca para productos orgánicos.</p><a href="#" class="btn-custom">Ver Detalles</a></div></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://placehold.co/600x400/E0D9CF/334231?text=App+UI" alt="Proyecto 2"><div class="project-card-body"><h4>App de Meditación</h4><p>Diseño de interfaz para una app de bienestar.</p><a href="#" class="btn-custom">Ver Detalles</a></div></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://placehold.co/600x400/C0C0C0/334231?text=E-commerce" alt="Proyecto 3"><div class="project-card-body"><h4>Web E-commerce</h4><p>Front-end para una tienda de ropa moderna.</p><a href="#" class="btn-custom">Ver Detalles</a></div></div></div>
+                <div class="row g-4 mt-4 justify-content-center">
+
+                    <!-- Proyecto 1: Motor de Videojuegos -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-card-body">
+                                <i class="fa-solid fa-gamepad project-icon"></i>
+                                <h4>Motor de Videojuegos 2D</h4>
+                                <p>Un motor gráfico simple construido desde cero en C++ para renderizar sprites y
+                                    gestionar la lógica de juegos de plataforma 2D.</p>
+                                <!-- CAMBIO DE CLASE AQUÍ -->
+                                <ul class="tag-list">
+                                    <li class="tag">C++</li>
+                                    <li class="tag">OpenGL</li>
+                                    <li class="tag">SDL2</li>
+                                </ul>
+                                <a href="#" target="_blank" class="btn-custom">Ver en GitHub <i
+                                        class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2: Portafolio Personal -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-card-body">
+                                <i class="fa-solid fa-palette project-icon"></i>
+                                <h4>Portafolio Personal</h4>
+                                <p>Portafolio web de una sola página, construido para presentar nuestras habilidades.
+                                    Cuenta con un carrusel interactivo y animaciones.</p>
+                                <!-- CAMBIO DE CLASE AQUÍ -->
+                                <ul class="tag-list">
+                                    <li class="tag">HTML5</li>
+                                    <li class="tag">CSS3</li>
+                                    <li class="tag">JavaScript</li>
+                                </ul>
+                                <a href="https://github.com/Sofii141/Portafolioweb" target="_blank"
+                                    class="btn-custom">Ver en GitHub <i
+                                        class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3: Sistema de Gestión -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card">
+                            <div class="project-card-body">
+                                <i class="fa-solid fa-sitemap project-icon"></i>
+                                <h4>Sistema de Gestión de Proyectos</h4>
+                                <p>Sistema de gestión basado en microservicios que conecta a estudiantes y empresas,
+                                    usando comunicación asíncrona.</p>
+                                <!-- CAMBIO DE CLASE AQUÍ -->
+                                <ul class="tag-list">
+                                    <li class="tag">Java 21</li>
+                                    <li class="tag">Spring Boot</li>
+                                    <li class="tag">MariaDB</li>
+                                </ul>
+                                <a href="https://github.com/paulamunoz06/GestionProyectosMicro" target="_blank"
+                                    class="btn-custom">Ver en GitHub <i
+                                        class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 5: CONTACTO (VERSIÓN CON FRAMEWORK)                       -->
+        <!-- ================================================================= -->
         <section id="contacto" class="section-container">
             <div class="container">
                 <h2 class="section-title">Hablemos</h2>
-                <div class="row mt-5 justify-content-center align-items-center">
-                    <div class="col-lg-6 mb-4"><form class="contact-form"><div class="mb-3"><input type="text" class="form-control" placeholder="Tu Nombre"></div><div class="mb-3"><input type="email" class="form-control" placeholder="Correo Electrónico"></div><div class="mb-4"><textarea class="form-control" rows="5" placeholder="Cuéntanos tu idea..."></textarea></div><button type="submit" class="btn-custom">Enviar Mensaje</button></form></div>
-                    <div class="col-lg-5"><div class="contact-info">
-                        <a href="#"><i class="fas fa-envelope"></i> correo@ejemplo.com</a>
-                        <a href="#"><i class="fab fa-linkedin"></i> /in/sofi-diego</a>
-                        <a href="#"><i class="fab fa-github"></i> /sofi-diego</a>
-                    </div></div>
+                <div class="row g-5 mt-4">
+
+                    <!-- Columna del Formulario (Organismo) -->
+                    <div class="col-lg-7">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <!-- Campo oculto para el ID del contacto (para ediciones) -->
+                            <input type="hidden" id="contact-id" name="id">
+
+                            <!-- Fila con Nombre y Email -->
+                            <div class="row g-3">
+                                <div class="col-md-6 form-group">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                                        placeholder="Tu nombre completo">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" name="email" required
+                                        placeholder="tu@correo.com">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+
+                            <!-- Fila con Teléfono y Motivo -->
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-6 form-group">
+                                    <label for="telefono" class="form-label">Teléfono (10 dígitos)</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required
+                                        placeholder="Ej: 3001234567">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="motivo" class="form-label">Motivo de Contacto</label>
+                                    <select class="form-select" id="motivo" name="motivo" required>
+                                        <option value="" disabled selected>Elige una opción...</option>
+                                        <option value="propuesta-laboral">Propuesta Laboral</option>
+                                        <option value="colaboracion">Colaboración en Proyecto</option>
+                                        <option value="feedback">Feedback sobre el Portafolio</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+
+                            <!-- Fila para el Mensaje -->
+                            <div class="form-group mt-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required
+                                    placeholder="Cuéntanos tu idea..."></textarea>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <!-- Fila para Preferencia y Términos -->
+                            <div class="row mt-4 align-items-center">
+                                <div class="col-md-6 form-group">
+                                    <label class="form-label">Preferencia de Contacto</label>
+                                    <div class="d-flex">
+                                        <div class="form-check me-4">
+                                            <input class="form-check-input" type="radio" name="preferenciaContacto"
+                                                id="preferenciaEmail" value="email" checked>
+                                            <label class="form-check-label" for="preferenciaEmail">Email</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="preferenciaContacto"
+                                                id="preferenciaTelefono" value="telefono">
+                                            <label class="form-check-label" for="preferenciaTelefono">Teléfono</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="aceptaTerminos"
+                                            name="aceptaTerminos" required>
+                                        <label class="form-check-label" for="aceptaTerminos">Acepto los términos y
+                                            condiciones</label>
+                                        <span class="error-message d-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botones de Acción -->
+                            <div class="d-flex gap-3 mt-4">
+                                <button type="submit" class="btn-custom flex-grow-1">Guardar Contacto</button>
+                                <button type="reset" class="btn-custom-outline">Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Columna de la Lista de Contactos (Organismo) -->
+                    <div class="col-lg-5">
+                        <div class="list-container">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="list-title">Contactos Guardados</h3>
+                                <button id="borrar-todo-btn" class="btn-danger-custom">Borrar Todo</button>
+                            </div>
+                            <ul id="contact-list" class="list-group">
+                                <!-- Los contactos se renderizarán aquí desde JS -->
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- ================================================================= -->
+        <!-- COMPONENTES DE UI ADICIONALES (fuera de la sección principal)     -->
+        <!-- ================================================================= -->
+
+        <!-- Plantilla para un ítem de la lista de contactos (Molécula) -->
+        <template id="contact-item-template">
+            <li class="list-group-item contact-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 contact-name">Nombre del Contacto</h5>
+                    <small class="text-muted contact-date">Fecha</small>
+                </div>
+                <p class="mb-1">
+                    <i class="fas fa-envelope me-2 text-primary"></i><span class="contact-email"></span>
+                </p>
+                <p class="mb-1">
+                    <i class="fas fa-phone me-2 text-primary"></i><span class="contact-phone"></span>
+                </p>
+                <div class="contact-actions">
+                    <button class="btn btn-sm btn-icon edit-btn" title="Editar"><i
+                            class="fas fa-pencil-alt"></i></button>
+                    <button class="btn btn-sm btn-icon delete-btn" title="Eliminar"><i
+                            class="fas fa-trash-alt"></i></button>
+                </div>
+            </li>
+        </template>
+
+        <!-- Modal de Confirmación Personalizado (Molécula) -->
+        <div class="custom-modal-overlay hidden" id="custom-modal-overlay">
+            <div class="custom-modal">
+                <p id="modal-message">¿Estás seguro?</p>
+                <div class="modal-actions">
+                    <button id="modal-confirm-btn" class="btn-custom">Confirmar</button>
+                    <button id="modal-cancel-btn" class="btn-custom-outline">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificación Toast Personalizada (Molécula) -->
+        <div class="toast-notification" id="toast-notification">
+            <i id="toast-icon" class="fas"></i>
+            <p id="toast-message">Mensaje de notificación.</p>
+        </div>
     </main>
 
     <footer class="footer-container">
-        <div class="container text-center">
-            <a class="footer-brand" href="#inicio">[Sofi y Diego]</a>
-            <div class="footer-social-icons mt-3">
-                <a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-behance"></i></a>
+        <div class="container">
+            <div class="row g-4 justify-content-between">
+
+                <!-- Columna 1: About (Molécula) -->
+                <div class="col-lg-5 col-md-12 footer-about">
+                    <a class="footer-brand" href="#inicio">[Sofi y Diego]</a>
+                    <p class="footer-description">
+                        Un portafolio digital donde la creatividad y el código se encuentran. Gracias por acompañarnos
+                        en nuestro viaje de desarrollo.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://github.com/Sofii141" target="_blank" class="social-icon"
+                            aria-label="GitHub de Sofía"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/tu-usuario-sofia" target="_blank" class="social-icon"
+                            aria-label="LinkedIn de Sofía"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/JDiegoG12" target="_blank" class="social-icon"
+                            aria-label="GitHub de Diego"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/juan-diego-g%C3%B3mez-garc%C3%A9s-823625313/"
+                            target="_blank" class="social-icon" aria-label="LinkedIn de Diego"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Contacto Sofía (Molécula) -->
+                <div class="col-lg-3 col-md-6 footer-contact-info">
+                    <h3 class="footer-section-title">Contacto Sofía</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> anaarangowt@unicauca.edu.co</li>
+                        <li><i class="fas fa-phone"></i> +57 310 668 3378</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Popayán, Colombia</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto Diego (Molécula) -->
+                <div class="col-lg-3 col-md-6 footer-contact-info">
+                    <h3 class="footer-section-title">Contacto Diego</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> juangomezmu@unicauca.edu.co</li>
+                        <li><i class="fas fa-phone"></i> +57 312 701 5960</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Popayán, Colombia</li>
+                    </ul>
+                </div>
+
             </div>
-            <hr class="footer-divider"><p class="footer-copyright">&copy; 2025 Sofía Arango & Juan Diego Gómez.</p>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Sofía Arango & Juan Diego Gómez. Todos los derechos reservados.
+                </p>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="module" src="js/contacto.js"></script>
 </body>
+
 </html>

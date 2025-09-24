@@ -1,8 +1,7 @@
 /* components/molecules/study-card.css */
 
 .study-card {
-    /* El efecto glassmorphism se mantiene, pero ahora actuará sobre el fondo sólido */
-    background: rgba(255, 255, 255, 0.5); /* Un poco más opaco para legibilidad sobre el color claro */
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -25,42 +24,4 @@
     color: var(--color-bg-dark);
     text-align: center;
     margin-bottom: 1.5rem;
-}
-
-/* ======================================== */
-/* ¡NUEVOS ESTILOS PARA LA TABLA TRANSPARENTE! */
-/* ======================================== */
-
-/* Hacemos que la tabla no tenga fondo propio */
-.study-card .table {
-    background-color: transparent !important; /* Importante para sobreescribir Bootstrap */
-}
-
-/* Estilo para los encabezados (NIVEL, INSTITUCIÓN, AÑO) */
-.study-card th {
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo translúcido sutil para el header */
-    border: none;
-    color: var(--color-bg-dark);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-/* Estilo para las celdas de datos */
-.study-card td {
-    padding: 1.2rem 0.5rem; /* Más espacio vertical para un look más limpio */
-    vertical-align: middle;
-    border: none;
-    border-top: 1px solid rgba(51, 66, 49, 0.2); /* Borde divisor muy sutil */
-    color: var(--color-bg-dark); /* Aseguramos que el texto sea legible */
-}
-
-.study-card .icon-level {
-    color: var(--color-primary);
-    margin-right: 0.75rem;
-    font-size: 1.2rem;
-    width: 20px;
-    text-align: center;
 }

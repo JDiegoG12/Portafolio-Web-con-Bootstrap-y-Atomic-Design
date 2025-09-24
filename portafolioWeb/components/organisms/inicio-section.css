@@ -66,17 +66,17 @@
     font-family: var(--font-artistic);
     font-weight: normal;
     font-size: 5.2rem; /* ANTES: 4.5rem */
-    color: var(--color-white);
+    color: var(--color-bg-dark);
 }
 #inicio .hero-subtitle {
-    color: var(--color-white);
+    color: var(--color-bg-dark);
     opacity: 0.9;
     margin-bottom: 1.5rem;
 }
 #inicio .hero-description {
     font-size: 1.2rem; /* ANTES: 1.1rem */
     line-height: 1.7;
-    color: var(--color-white);
+    color: var(--color-bg-dark);
     margin: 0 auto;
 }
 

@@ -1,0 +1,16 @@
+/* components/molecules/toast.css */
+.toast-notification {
+    position: fixed; top: 20px; right: 20px;
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+    padding: 1rem 1.5rem; border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex; align-items: center; gap: 1rem;
+    z-index: 1100;
+    transform: translateX(calc(100% + 20px));
+    transition: transform 0.4s ease-in-out;
+}
+.toast-notification.show { transform: translateX(0); }
+.toast-notification.success { background-color: #28a745; }
+.toast-notification.error { background-color: #dc3545; }
+.toast-notification p { margin: 0; }

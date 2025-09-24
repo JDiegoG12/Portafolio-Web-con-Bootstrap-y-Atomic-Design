@@ -1,0 +1,40 @@
+/* components/molecules/footer-contact-info.css */
+
+.footer-contact-info .footer-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Línea decorativa bajo el título de sección */
+.footer-contact-info .footer-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-primary);
+}
+
+.footer-contact-info .contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact-info .contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact-info .contact-list i {
+    color: var(--color-primary);
+    width: 25px; /* Asegura alineación vertical */
+    text-align: center;
+    margin-right: 0.5rem;
+}

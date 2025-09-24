@@ -1,0 +1,23 @@
+/* components/atoms/tag.css */
+
+/* El contenedor de las etiquetas */
+.tag-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Espaciado entre etiquetas */
+}
+
+/* La etiqueta individual */
+.tag {
+    background-color: rgba(134, 150, 132, 0.15); /* Tinte del color primario */
+    color: var(--color-primary);
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px; /* Forma de píldora */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(134, 150, 132, 0.2);
+}

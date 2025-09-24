@@ -1,0 +1,43 @@
+/* components/molecules/image-overlay.css */
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, transparent);
+    color: var(--color-white);
+    transition: all 0.4s ease;
+}
+
+.image-overlay h4 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+}
+
+.image-overlay p {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0;
+    
+    /* La descripción está oculta por defecto y aparece al hacer hover en la tarjeta padre */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 
+   Esta regla es clave: cuando el *contenedor padre* de la superposición
+   entra en estado :hover, el párrafo dentro de la superposición se hace visible.
+   Esto permite que cualquier tarjeta que contenga un .image-overlay pueda activar la animación.
+*/
+*:hover > .image-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}

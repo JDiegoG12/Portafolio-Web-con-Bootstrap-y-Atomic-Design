@@ -1,29 +1,45 @@
+/* components/organisms/footer.css */
+
 .footer-container {
     background-color: var(--color-bg-dark);
-    color: var(--color-white);
-    padding: 3rem 0;
+    padding: 4rem 0 2rem 0;
+    margin-top: auto;
 }
+
 .footer-brand {
     font-family: var(--font-artistic);
     font-size: 2.5rem;
     color: var(--color-white);
     text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
 }
-.footer-social-icons a {
-    color: var(--color-white);
-    font-size: 1.3rem;
-    margin: 0 0.75rem;
-    transition: color 0.3s ease;
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
 }
-.footer-social-icons a:hover {
-    color: var(--color-primary);
+
+/* El organismo define el espaciado del contenedor de los iconos */
+.footer-socials {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
 }
+
+/* --- Átomo: Divisor y Copyright --- */
 .footer-divider {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    width: 60%;
-    margin: 1.5rem auto;
+    width: 100%;
+    margin: 3rem auto 2rem auto;
 }
+
+.footer-bottom {
+    text-align: center;
+}
+
 .footer-copyright {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
+    margin: 0;
 }

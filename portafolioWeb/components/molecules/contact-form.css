@@ -1,0 +1,37 @@
+/* components/molecules/contact-form.css */
+
+.contact-form .form-label {
+    font-weight: 600;
+    color: var(--color-bg-dark);
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(134, 150, 132, 0.3);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(134, 150, 132, 0.25);
+}
+
+.contact-form .form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.contact-form .error-message {
+    color: #dc3545;
+    font-size: 0.875em;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.contact-form .form-control.is-invalid,
+.contact-form .form-select.is-invalid {
+    border-color: #dc3545;
+}

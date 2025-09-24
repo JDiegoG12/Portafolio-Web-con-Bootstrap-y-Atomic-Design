@@ -1,0 +1,48 @@
+/* components/molecules/contact-list.css */
+
+.list-container {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.list-title {
+    color: var(--color-bg-dark);
+    font-weight: 700;
+}
+
+.contact-item {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 10px !important;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    position: relative;
+    padding-right: 4rem; /* Espacio para los botones */
+}
+
+.contact-item .text-primary {
+    color: var(--color-primary) !important;
+}
+
+.contact-actions {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    color: var(--color-text);
+}
+.btn-icon:hover {
+    color: var(--color-primary);
+}
+.btn-icon.delete-btn:hover {
+    color: #dc3545;
+}

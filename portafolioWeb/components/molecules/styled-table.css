@@ -1,0 +1,51 @@
+/* components/molecules/styled-table.css */
+
+/* Hacemos que la tabla no tenga fondo propio */
+.styled-table {
+    background-color: transparent !important; /* Importante para sobreescribir Bootstrap */
+    border: none;
+    border-collapse: separate; /* Necesario para que el border-spacing funcione */
+    border-spacing: 0 0.5rem; /* Añade un pequeño espacio vertical entre filas */
+}
+
+/* Estilo para los encabezados (NIVEL, INSTITUCIÓN, AÑO) */
+.styled-table th {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--color-bg-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1rem;
+}
+
+/* Estilo para las celdas de datos */
+.styled-table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border: none;
+    border-top: 1px solid rgba(51, 66, 49, 0.1);
+    border-bottom: 1px solid rgba(51, 66, 49, 0.1);
+    color: var(--color-bg-dark);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Para que la primera y última celda tengan bordes redondeados */
+.styled-table td:first-child {
+    border-left: 1px solid rgba(51, 66, 49, 0.1);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.styled-table td:last-child {
+    border-right: 1px solid rgba(51, 66, 49, 0.1);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.styled-table .icon-level {
+    color: var(--color-primary);
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}

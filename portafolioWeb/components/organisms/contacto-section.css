@@ -1,15 +1,8 @@
+/* components/organisms/contacto-section.css */
+
 #contacto {
     background-image: url('../../assets/images/nube.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-
-
-.contact-form {
-    background: var(--color-white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
-}
-
