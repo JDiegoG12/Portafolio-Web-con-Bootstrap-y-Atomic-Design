@@ -1,0 +1,43 @@
+/* ================================================================= */
+/* 1. CONFIGURACIÓN GENERAL E IMPORTACIONES                        */
+/* ================================================================= */
+
+/* Importación de las fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Importación de nuestros componentes */
+@import url('../components/atoms/section-title.css');
+@import url('../components/molecules/study-card.css');
+@import url('../components/organisms/header.css');
+@import url('../components/organisms/inicio-section.css');
+@import url('../components/organisms/estudios-section.css');
+
+
+/* 
+  'Great Vibes' para el estilo caligráfico.
+  'Lora' para el estilo serif editorial.
+*/
+
+:root {
+    /* Paleta de Colores */
+    --color-background: #FDF6EC; /* Marfil suave */
+    --color-text: #4B5944;       /* Oliva oscuro para texto principal */
+    --color-primary: #89A9C8;     /* Azul pastel para acentos */
+    --color-dark-green: #264027;  /* Verde bosque para títulos/links */
+    --color-highlight: #FFFFFF;   /* Blanco para resaltar */
+    --color-warm: #E1A85B;        /* Naranja cálido para detalles */
+
+    /* Tipografía */
+    --font-primary: 'Great Vibes', cursive;
+    --font-secondary: 'Lora', serif;
+
+    /* Otros */
+    --navbar-height: 70px;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding-top: var(--navbar-height);
+}

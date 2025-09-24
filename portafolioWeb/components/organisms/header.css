@@ -1,0 +1,88 @@
+/* ================================================================= */
+/* ORGANISMO: HEADER                                               */
+/* ================================================================= */
+
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--color-background);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-custom {
+    min-height: var(--navbar-height);
+}
+
+/* Estilo del "Logo" (Átomo) */
+.navbar-brand-custom {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--color-dark-green);
+    font-weight: normal;
+}
+
+.navbar-brand-custom:hover {
+    color: var(--color-primary);
+}
+
+/* Estilo de los Enlaces de Navegación (Molécula) */
+.nav-item {
+    margin: 0 0.5rem;
+}
+
+.nav-link {
+    color: var(--color-dark-green);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-dark-green);
+}
+
+/* Estilo del Botón Hamburguesa (Átomo) */
+.navbar-toggler {
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-dark-green);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Estilos para cuando el menú está colapsado en móvil */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+}
