@@ -37,6 +37,9 @@ Esta sección no es solo un formulario, sino una aplicación completa de gestió
 
 <img width="1599" height="731" alt="image" src="https://github.com/user-attachments/assets/fa18b45f-fb2f-4d59-bb6f-bd214e61c411" />
 
+### 5. Footer 
+<img width="1599" height="478" alt="image" src="https://github.com/user-attachments/assets/e01b1d5c-b5a3-4b7b-964e-28c312c87e5d" />
+
 ---
 
 ## ✨ Características Principales
