@@ -6,7 +6,7 @@
 export class ContactRepository {
     constructor() {
         // La clave bajo la cual guardaremos toda nuestra lista de contactos en localStorage.
-        this._storageKey = 'contactos';
+        this._storageKey = 'contactosConFramework';
     }
 
     /**
