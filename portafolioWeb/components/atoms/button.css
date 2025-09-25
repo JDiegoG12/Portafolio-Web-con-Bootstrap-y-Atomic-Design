@@ -1,17 +1,30 @@
+
+
 .btn-custom {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 5px;
+    background-color: transparent;
+    border-radius: 8px;
     padding: 12px 30px;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
-    border: 2px solid var(--color-primary);
+    border: 2px solid; /* Borde sólido, el color lo define el modificador */
     transition: all 0.3s ease;
+    text-align: center;
 }
+
 .btn-custom:hover {
-    background-color: transparent;
-    color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-custom.btn-accent {
+    color: #6d7846;
+    border-color: #6d7846;
+}
+
+.btn-custom.btn-accent:hover {
+    background-color: #6d7846;
+    border-color: #6d7846;
+    color: var(--color-white);
 }
 
 .btn-custom-outline {

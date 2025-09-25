@@ -6,8 +6,9 @@
     left: 0;
     right: 0;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 25%, transparent 100%);
     color: var(--color-white);
+    z-index: 2; /* Se asegura de estar sobre la imagen (.hobby-card-bg) */
     transition: all 0.4s ease;
 }
 
@@ -17,6 +18,8 @@
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
     color: var(--color-white);
+    transform: translateY(0);
+    transition: transform 0.4s ease;
 }
 
 .image-overlay p {
@@ -25,19 +28,20 @@
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 0;
-    
-    /* La descripción está oculta por defecto y aparece al hacer hover en la tarjeta padre */
+    line-height: 1.6;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
+    transition-delay: 0.1s; 
 }
 
-/* 
-   Esta regla es clave: cuando el *contenedor padre* de la superposición
-   entra en estado :hover, el párrafo dentro de la superposición se hace visible.
-   Esto permite que cualquier tarjeta que contenga un .image-overlay pueda activar la animación.
-*/
-*:hover > .image-overlay p {
+/* --- EFECTOS HOVER (se mantienen igual) --- */
+
+.hobby-card:hover .image-overlay h4 {
+    transform: translateY(-10px);
+}
+
+.hobby-card:hover .image-overlay p {
     opacity: 1;
     transform: translateY(0);
 }

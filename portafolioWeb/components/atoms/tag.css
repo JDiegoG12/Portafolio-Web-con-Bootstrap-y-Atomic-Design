@@ -9,15 +9,25 @@
     gap: 0.5rem; /* Espaciado entre etiquetas */
 }
 
-/* La etiqueta individual */
 .tag {
-    background-color: rgba(134, 150, 132, 0.15); /* Tinte del color primario */
-    color: var(--color-primary);
+    /* CAMBIO CLAVE: Fondo verde pálido */
+    background-color: #f1f3ed; 
+    /* CAMBIO CLAVE: Texto verde principal */
+    color: #6d7846; 
     font-weight: 600;
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px; /* Forma de píldora */
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px; 
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid rgba(134, 150, 132, 0.2);
+    /* CAMBIO CLAVE: Borde verde claro */
+    border: 1px solid #dde0d6;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    /* CAMBIO CLAVE: El fondo se vuelve verde sólido al pasar el mouse */
+    background-color: #6d7846;
+    color: var(--color-white);
+    border-color: #6d7846;
 }

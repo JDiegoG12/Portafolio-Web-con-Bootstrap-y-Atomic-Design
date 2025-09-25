@@ -1,13 +1,42 @@
+/* components/atoms/section-title.css */
+
 .section-title {
     font-family: var(--font-artistic);
     font-weight: normal;
-    font-size: 4rem;
     color: var(--color-bg-dark);
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
+
+    /* Tamaño base para móviles (el más pequeño) */
+    font-size: 3.5rem; 
 }
+
+/* --- TAMAÑOS RESPONSIVE --- */
+
+/* Para tabletas (a partir de 768px) */
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 4rem;
+    }
+}
+
+/* Para escritorios pequeños (a partir de 992px) */
+@media (min-width: 992px) {
+    .section-title {
+        font-size: 5rem; /* ¡Más grande que tu original para mayor impacto! */
+    }
+}
+
+/* Para escritorios muy grandes (a partir de 1200px) */
+@media (min-width: 1200px) {
+    .section-title {
+        font-size: 5.5rem; /* Aún más grande en pantallas XL */
+    }
+}
+
+
 .section-title::after {
     content: '';
     position: absolute;

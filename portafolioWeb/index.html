@@ -45,6 +45,8 @@
     <link rel="stylesheet" href="components/organisms/proyectos-section.css">
     <link rel="stylesheet" href="components/organisms/contacto-section.css">
     <link rel="stylesheet" href="components/organisms/footer.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -130,175 +132,172 @@
         <!-- SECCIÓN 2: ESTUDIOS                             -->
         <!-- ================================================================= -->
         <section id="estudios" class="section-container">
-            <div class="container">
-                <h2 class="section-title">Nuestra Formación</h2>
-                <div class="row g-4 justify-content-center mt-4">
+        <div class="container">
+            <h2 class="section-title display-3" data-aos="fade-down">Nuestra Formación</h2>
+            <div class="row g-4 justify-content-center mt-4">
 
-                    <!-- Tarjeta de Sofía -->
-                    <div class="col-lg-6">
-                        <div class="study-card">
-                            <h3>Formación de Sofía</h3>
-                            <table class="table styled-table">
-                                <!-- ¡IMPORTANTE! Re-agregamos los encabezados de la tabla -->
-                                <thead>
-                                    <tr>
-                                        <th>Nivel</th>
-                                        <th>Institución</th>
-                                        <th>Año</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
-                                        <td><strong>San José</strong></td>
-                                        <td>2011-2015</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
-                                        <td><strong>Los Andes</strong></td>
-                                        <td>2015-2021</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
-                                        <td><strong>U. del Cauca</strong></td>
-                                        <td>2022-Actual.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <!-- Tarjeta de Sofía -->
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="study-card">
+                        <h3>Formación de Sofía</h3>
+                        <table class="table styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Nivel</th>
+                                    <th>Institución</th>
+                                    <th>Año</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
+                                    <td><strong>San José</strong></td>
+                                    <td>2011-2015</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
+                                    <td><strong>Los Andes</strong></td>
+                                    <td>2015-2021</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
+                                    <td><strong>U. del Cauca</strong></td>
+                                    <td>2022-Actual.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-
-                    <!-- Tarjeta de Diego -->
-                    <div class="col-lg-6">
-                        <div class="study-card">
-                            <h3>Formación de Diego</h3>
-                            <table class="table styled-table">
-                                <!-- ¡IMPORTANTE! Re-agregamos los encabezados de la tabla -->
-                                <thead>
-                                    <tr>
-                                        <th>Nivel</th>
-                                        <th>Institución</th>
-                                        <th>Año</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
-                                        <td><strong>La Concentración</strong></td>
-                                        <td>2010-2014</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
-                                        <td><strong>Bto Patía</strong></td>
-                                        <td>2014-2021</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
-                                        <td><strong>U. del Cauca</strong></td>
-                                        <td>2021-Actual.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Tarjeta de Diego -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="study-card">
+                        <h3>Formación de Diego</h3>
+                        <table class="table styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Nivel</th>
+                                    <th>Institución</th>
+                                    <th>Año</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa-solid fa-shapes icon-level"></i> Primaria</td>
+                                    <td><strong>La Concentración</strong></td>
+                                    <td>2010-2014</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-book-open icon-level"></i> Bachillerato</td>
+                                    <td><strong>Bto Patía</strong></td>
+                                    <td>2014-2021</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-graduation-cap icon-level"></i> Universidad</td>
+                                    <td><strong>U. del Cauca</strong></td>
+                                    <td>2021-Actual.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
+    </section>
         <!-- ================================================================= -->
         <!-- SECCIÓN 3: PASATIEMPOS                          -->
         <!-- ================================================================= -->
-        <section id="pasatiempos" class="section-container">
-            <div class="container">
-                <h2 class="section-title">Pasatiempos</h2>
-                <div class="row g-4 justify-content-center mt-4">
+       <section id="pasatiempos" class="section-container">
+    <div class="container">
+        <h2 class="section-title display-3" data-aos="fade-down">Pasatiempos</h2>
+        <div class="row g-4 justify-content-center mt-4">
 
-                    <!-- Tarjeta 1: Amistades -->
-                    <div class="col-md-6 col-lg-5">
-                        <div class="hobby-card" style="background-image: url('assets/images/pasatiempo1.png');">
-                            <!-- CAMBIO DE CLASE AQUÍ -->
-                            <div class="image-overlay">
-                                <h4>Compartir con Amigos</h4>
-                                <p>Disfrutamos de reuniones y salidas que fortalecen nuestros lazos.</p>
-                            </div>
-                        </div>
+            <!-- Tarjeta 1: Amistades -->
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in-up">
+                <!-- El style="background-image..." se elimina de aquí -->
+                <div class="hobby-card">
+                    <!-- AÑADIMOS LA IMAGEN COMO UN ELEMENTO REAL -->
+                    <img src="assets/images/pasatiempo1.png" alt="Amigos compartiendo" class="hobby-card-bg">
+                    <div class="image-overlay">
+                        <h4>Compartir con Amigos</h4>
+                        <p>Disfrutamos de reuniones y salidas que fortalecen nuestros lazos.</p>
                     </div>
-
-                    <!-- Tarjeta 2: Deporte -->
-                    <div class="col-md-6 col-lg-5">
-                        <div class="hobby-card" style="background-image: url('assets/images/pasatiempo2.png');">
-                            <!-- CAMBIO DE CLASE AQUÍ -->
-                            <div class="image-overlay">
-                                <h4>Hacer Deporte</h4>
-                                <p>Nos mantenemos activos y saludables practicando nuestros deportes favoritos.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 3: Videojuegos -->
-                    <div class="col-md-6 col-lg-5">
-                        <div class="hobby-card" style="background-image: url('assets/images/pasatiempo3.png');">
-                            <!-- CAMBIO DE CLASE AQUÍ -->
-                            <div class="image-overlay">
-                                <h4>Videojuegos</h4>
-                                <p>Exploramos mundos virtuales y disfrutamos de desafíos estratégicos en nuestro tiempo
-                                    libre.</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </section>
+
+            <!-- Tarjeta 2: Deporte -->
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="hobby-card">
+                    <img src="assets/images/pasatiempo2.png" alt="Gimnasio con caminadoras" class="hobby-card-bg">
+                    <div class="image-overlay">
+                        <h4>Hacer Deporte</h4>
+                        <p>Nos mantenemos activos y saludables practicando nuestros deportes favoritos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Videojuegos -->
+            <div class="col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="hobby-card">
+                    <img src="assets/images/pasatiempo3.png" alt="Personajes de videojuego" class="hobby-card-bg">
+                    <div class="image-overlay">
+                        <h4>Videojuegos</h4>
+                        <p>Exploramos mundos virtuales y disfrutamos de desafíos estratégicos.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <section id="proyectos" class="section-container">
             <div class="container">
-                <h2 class="section-title">Proyectos Destacados</h2>
+                <h2 class="section-title display-3" data-aos="fade-down">Proyectos Destacados</h2>
                 <div class="row g-4 mt-4 justify-content-center">
 
                     <!-- Proyecto 1: Motor de Videojuegos -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card">
                             <div class="project-card-body">
                                 <i class="fa-solid fa-gamepad project-icon"></i>
                                 <h4>Motor de Videojuegos 2D</h4>
                                 <p>Un motor gráfico simple construido desde cero en C++ para renderizar sprites y
                                     gestionar la lógica de juegos de plataforma 2D.</p>
-                                <!-- CAMBIO DE CLASE AQUÍ -->
                                 <ul class="tag-list">
                                     <li class="tag">C++</li>
                                     <li class="tag">OpenGL</li>
                                     <li class="tag">SDL2</li>
                                 </ul>
-                                <a href="#" target="_blank" class="btn-custom">Ver en GitHub <i
+                                <a href="#" target="_blank" class="btn-custom btn-accent">Ver en GitHub <i
                                         class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Proyecto 2: Portafolio Personal -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card">
                             <div class="project-card-body">
                                 <i class="fa-solid fa-palette project-icon"></i>
                                 <h4>Portafolio Personal</h4>
                                 <p>Portafolio web de una sola página, construido para presentar nuestras habilidades.
                                     Cuenta con un carrusel interactivo y animaciones.</p>
-                                <!-- CAMBIO DE CLASE AQUÍ -->
                                 <ul class="tag-list">
                                     <li class="tag">HTML5</li>
                                     <li class="tag">CSS3</li>
                                     <li class="tag">JavaScript</li>
                                 </ul>
                                 <a href="https://github.com/Sofii141/Portafolioweb" target="_blank"
-                                    class="btn-custom">Ver en GitHub <i
+                                    class="btn-custom btn-accent">Ver en GitHub <i
                                         class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Proyecto 3: Sistema de Gestión -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-card">
                             <div class="project-card-body">
                                 <i class="fa-solid fa-sitemap project-icon"></i>
@@ -312,7 +311,7 @@
                                     <li class="tag">MariaDB</li>
                                 </ul>
                                 <a href="https://github.com/paulamunoz06/GestionProyectosMicro" target="_blank"
-                                    class="btn-custom">Ver en GitHub <i
+                                    class="btn-custom btn-accent">Ver en GitHub <i
                                         class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
                             </div>
                         </div>
@@ -327,11 +326,11 @@
         <!-- ================================================================= -->
         <section id="contacto" class="section-container">
             <div class="container">
-                <h2 class="section-title">Hablemos</h2>
+                <h2 class="section-title display-3" data-aos="fade-down">Hablemos</h2>
                 <div class="row g-5 mt-4">
 
                     <!-- Columna del Formulario (Organismo) -->
-                    <div class="col-lg-7">
+                    <div class="col-lg-7" data-aos="fade-right">
                         <form id="contact-form" class="contact-form" novalidate>
                             <!-- Campo oculto para el ID del contacto (para ediciones) -->
                             <input type="hidden" id="contact-id" name="id">
@@ -418,7 +417,7 @@
                     </div>
 
                     <!-- Columna de la Lista de Contactos (Organismo) -->
-                    <div class="col-lg-5">
+                    <div class="col-lg-5" data-aos="fade-left">
                         <div class="list-container">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h3 class="list-title">Contactos Guardados</h3>
@@ -532,8 +531,10 @@
         </div>
     </footer>
 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script type="module" src="js/contacto.js"></script>
 </body>
 

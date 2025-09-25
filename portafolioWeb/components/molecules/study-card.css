@@ -1,27 +1,27 @@
 /* components/molecules/study-card.css */
 
 .study-card {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    
-    border-radius: 15px;
-    padding: 2rem;
+    background-color: var(--color-white);
+    /* CAMBIO CLAVE: Borde verde */
+    border: 1px solid #6d7846;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 3rem;
     height: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .study-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    /* CAMBIO CLAVE: Sombra verde */
+    box-shadow: 0 10px 30px rgba(109, 120, 70, 0.2);
 }
 
 .study-card h3 {
     font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 2rem;
     color: var(--color-bg-dark);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }

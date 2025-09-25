@@ -1,26 +1,27 @@
 /* components/molecules/project-card.css */
 
+/* components/molecules/project-card.css */
+
 .project-card {
-    border-radius: 15px;
-    overflow: hidden;
+    background: var(--color-white);
+    border-radius: 16px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    /* CAMBIO CLAVE: Borde con el nuevo color verde */
+    border: 1px solid #6d7846; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+    /* CAMBIO CLAVE: Sombra verde para el efecto "glow" */
+    box-shadow: 0 10px 30px rgba(109, 120, 70, 0.2); 
 }
 
 .project-card-body {
-    padding: 2rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -28,29 +29,33 @@
 
 .project-icon {
     font-size: 1.8rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
+    /* CAMBIO CLAVE: Icono verde con fondo verde claro */
+    color: #6d7846; 
+    background-color: #f1f3ed; /* Un verde muy pálido derivado del principal */
+    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
+
 
 .project-card-body h4 {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.6rem; 
     color: var(--color-bg-dark);
     margin-bottom: 0.75rem;
 }
 
 .project-card-body p {
-    flex-grow: 1; /* Empuja el contenido de abajo hacia el final */
-    font-size: 0.95rem;
-    line-height: 1.6;
+    flex-grow: 1; 
+    font-size: 1rem;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
-/* 
-   La molécula 'project-card' ya no define cómo se ven las etiquetas.
-   Solo define el margen que debe tener el contenedor de las etiquetas
-   dentro de su layout.
-*/
 .project-card-body .tag-list {
     margin-bottom: 2rem;
 }

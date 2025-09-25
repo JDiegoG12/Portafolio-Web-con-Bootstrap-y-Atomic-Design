@@ -1,8 +1,7 @@
 /* components/organisms/estudios-section.css */
 
-
+/* components/organisms/estudios-section.css */
 #estudios {
-    /* CAMBIO: Usamos un color sólido PERO con transparencia */
-    /* Esto permite que el fondo del body se vea a través y pueda ser desenfocado */
-    background-color: rgba(249, 245, 240, 0.85); /* Este es el color #f9f5f0 pero con 85% de opacidad */
+    background-color: #FAF8F5; /* Un fondo blanco roto muy sutil */
+    padding: 100px 0;
 }

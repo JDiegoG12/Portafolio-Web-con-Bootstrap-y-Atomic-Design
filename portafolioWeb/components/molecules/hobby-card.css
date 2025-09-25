@@ -3,14 +3,36 @@
 .hobby-card {
     position: relative;
     height: 450px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: transform 0.4s ease;
+    border-radius: 20px;
+    overflow: hidden; /* Muy importante para que la imagen no se salga de los bordes */
+    
+    /* --- LA MAGIA DEL GLASSMORPHISM EN LA TARJETA --- */
+    background: rgba(255, 255, 255, 0.2); /* 1. Fondo blanco translúcido */
+    backdrop-filter: blur(8px);          /* 2. El desenfoque del fondo de la PÁGINA */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 3. Borde sutil para el efecto de cristal */
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hobby-card:hover {
-    transform: translateY(-10px); /* Efecto de elevación sutil */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para la imagen que ahora está DENTRO de la tarjeta */
+.hobby-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    z-index: 1; /* La ponemos en la capa inferior, dentro de la tarjeta */
+    transition: transform 0.5s ease;
+}
+
+.hobby-card:hover .hobby-card-bg {
+    transform: scale(1.05); /* Mantenemos el sutil efecto de zoom en la imagen */
 }

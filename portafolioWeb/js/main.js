@@ -31,4 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    AOS.init({
+        duration: 800, // Duración de la animación en milisegundos
+        once: true,    // La animación solo ocurre una vez
+        offset: 50,    // La animación se activa 50px antes de que el elemento sea visible
+    });
 });
