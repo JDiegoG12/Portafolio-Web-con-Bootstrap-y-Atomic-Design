@@ -1,5 +1,26 @@
-/* components/molecules/footer-contact-info.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Información de Contacto del Footer
+                    (footer-contact-info.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para los bloques de información de
+                    contacto que se encuentran en el pie de página. Esta molécula
+                    organiza un título y una lista de datos de contacto
+                    (email, teléfono, ubicación).
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .footer-section-title: Título para una sección de contacto en el footer.
+ * -----------------------------------------------------------------------------
+ * Estiliza los encabezados "Contacto Sofía" y "Contacto Diego".
+ * - `font-size`, `font-weight`: Establecen la jerarquía tipográfica.
+ * - `color`: Texto blanco para un alto contraste sobre el fondo oscuro del footer.
+ * - `position: relative`: Necesario para el posicionamiento absoluto de la
+ *   línea decorativa '::after'.
+ * - `margin-bottom`, `padding-bottom`: Crean el espaciado vertical adecuado.
+ */
 .footer-contact-info .footer-section-title {
     font-size: 1.2rem;
     font-weight: 600;
@@ -9,7 +30,13 @@
     padding-bottom: 0.5rem;
 }
 
-/* Línea decorativa bajo el título de sección */
+/**
+ * -----------------------------------------------------------------------------
+ * Línea decorativa '::after' para el título.
+ * -----------------------------------------------------------------------------
+ * Añade un subrayado corto y alineado a la izquierda bajo el título,
+ * utilizando el color primario para un toque de acento visual.
+ */
 .footer-contact-info .footer-section-title::after {
     content: '';
     position: absolute;
@@ -20,11 +47,26 @@
     background-color: var(--color-primary);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .contact-list: Contenedor de la lista de datos de contacto.
+ * -----------------------------------------------------------------------------
+ * Resetea los estilos por defecto de la lista para un control de diseño completo.
+ */
 .footer-contact-info .contact-list {
     list-style: none;
     padding: 0;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * li: Elemento individual de la lista de contacto.
+ * -----------------------------------------------------------------------------
+ * - `display: flex`, `align-items: center`: Alinear el icono y el texto
+ *   verticalmente en el centro.
+ * - `color`: Se aplica un color blanco con transparencia para el texto,
+ *   haciéndolo ligeramente menos prominente que el título y los iconos.
+ */
 .footer-contact-info .contact-list li {
     display: flex;
     align-items: center;
@@ -32,9 +74,19 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * i: Icono dentro de un elemento de la lista.
+ * -----------------------------------------------------------------------------
+ * - `color`: Usa el color primario para que los iconos destaquen.
+ * - `width: 25px`: Asigna un ancho fijo a cada icono. Esto es crucial para
+ *   que todo el texto de la lista quede perfectamente alineado verticalmente,
+ *   independientemente del ancho de cada icono individual.
+ * - `text-align: center`: Centra el icono dentro de su contenedor de ancho fijo.
+ */
 .footer-contact-info .contact-list i {
     color: var(--color-primary);
-    width: 25px; /* Asegura alineación vertical */
+    width: 25px;
     text-align: center;
     margin-right: 0.5rem;
 }

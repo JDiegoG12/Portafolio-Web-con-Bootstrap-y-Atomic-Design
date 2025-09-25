@@ -1,38 +1,94 @@
-/* components/molecules/hobby-card.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Tarjeta de Pasatiempo (hobby-card.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para las tarjetas utilizadas en la sección
+                    de "Pasatiempos". Esta molécula se caracteriza por un
+                    destacado efecto de "glassmorphism" (vidrio esmerilado)
+                    y una interacción de zoom sutil en la imagen de fondo.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .hobby-card: Contenedor principal de la tarjeta.
+ * -----------------------------------------------------------------------------
+ * Establece la estructura y el efecto visual de la tarjeta.
+ * - `position: relative`: Permite que los elementos hijos (como la imagen de
+ *   fondo y la superposición de texto) se posicionen de forma absoluta
+ *   dentro de sus límites.
+ * - `height`: Define una altura fija para mantener la consistencia en el layout.
+ * - `border-radius`: Suaviza las esquinas de la tarjeta.
+ * - `overflow: hidden`: Crucial para contener la imagen de fondo, especialmente
+ *   cuando se aplica el efecto de zoom en el estado :hover.
+ * - `transition`: Anima suavemente el cambio de posición y sombra.
+ */
 .hobby-card {
     position: relative;
     height: 450px;
     border-radius: 20px;
-    overflow: hidden; /* Muy importante para que la imagen no se salga de los bordes */
-    
-    /* --- LA MAGIA DEL GLASSMORPHISM EN LA TARJETA --- */
-    background: rgba(255, 255, 255, 0.2); /* 1. Fondo blanco translúcido */
-    backdrop-filter: blur(8px);          /* 2. El desenfoque del fondo de la PÁGINA */
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* 3. Borde sutil para el efecto de cristal */
-    
+    overflow: hidden;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    /* --- Implementación del Efecto Glassmorphism --- */
+    /* 1. Fondo semitransparente que permite ver a través del elemento. */
+    background: rgba(255, 255, 255, 0.2);
+    /* 2. Filtro que desenfoca el contenido de la página que está DETRÁS de la tarjeta. */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Prefijo para compatibilidad con Safari */
+    /* 3. Borde sutil y translúcido que simula el borde de un cristal. */
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * :hover pseudo-clase para .hobby-card.
+ * -----------------------------------------------------------------------------
+ * Proporciona feedback visual al usuario al pasar el cursor sobre la tarjeta.
+ * - `transform: translateY(-10px)`: Eleva la tarjeta ligeramente en el eje Y.
+ * - `box-shadow`: Aumenta la intensidad de la sombra para reforzar la
+ *   sensación de elevación y profundidad.
+ */
 .hobby-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo para la imagen que ahora está DENTRO de la tarjeta */
+/**
+ * -----------------------------------------------------------------------------
+ * .hobby-card-bg: La imagen de fondo de la tarjeta.
+ * -----------------------------------------------------------------------------
+ * Esta clase se aplica a un elemento <img> dentro de .hobby-card.
+ * - `position: absolute`: La saca del flujo normal del documento para
+ *   posicionarla como una capa de fondo dentro de su padre relativo.
+ * - `top`, `left`, `width`, `height`: Hacen que la imagen cubra completamente
+ *   el área de la tarjeta.
+ * - `object-fit: cover`: Asegura que la imagen llene el espacio sin
+ *   distorsionarse, recortando el exceso si es necesario.
+ * - `z-index: 1`: La coloca en una capa inferior, por debajo del contenido
+ *   de texto (definido en image-overlay.css).
+ * - `transition`: Anima suavemente el efecto de escala.
+ */
 .hobby-card-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
-    z-index: 1; /* La ponemos en la capa inferior, dentro de la tarjeta */
+    object-fit: cover;
+    z-index: 1;
     transition: transform 0.5s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * Efecto hover para la imagen de fondo.
+ * -----------------------------------------------------------------------------
+ * Cuando el cursor está sobre la tarjeta (.hobby-card), se aplica una
+ * transformación de escala a la imagen de fondo (.hobby-card-bg), creando
+ * un sutil y atractivo efecto de zoom.
+ */
 .hobby-card:hover .hobby-card-bg {
-    transform: scale(1.05); /* Mantenemos el sutil efecto de zoom en la imagen */
+    transform: scale(1.05);
 }

@@ -1,7 +1,28 @@
-/* components/organisms/estudios-section.css */
+/*
+    ================================================================================
+    Componente:     Organismo - Sección de Estudios (estudios-section.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos de fondo y espaciado para el
+                    contenedor principal de la sección "Nuestra Formación"
+                    (<section id="estudios">).
+    ================================================================================
+*/
 
-/* components/organisms/estudios-section.css */
+/**
+ * -----------------------------------------------------------------------------
+ * #estudios: Selector de ID para el contenedor de la sección.
+ * -----------------------------------------------------------------------------
+ * - `background-color`: Aplica un color de fondo "blanco roto" (#FAF8F5).
+ *   Esta elección sutil, en lugar de un blanco puro, ayuda a crear una
+ *   atmósfera más cálida y reduce la fatiga visual del lector. También
+ *   sirve para diferenciar visualmente esta sección de otras.
+ * - `padding`: Establece un espaciado vertical de 100px en la parte
+ *   superior e inferior de la sección. Esto proporciona un "espacio para
+ *   respirar" adecuado alrededor del contenido, mejorando la legibilidad
+ *   y el equilibrio del diseño general. El padding horizontal es 0, ya que
+ *   esta responsabilidad se delega al elemento .container anidado.
+ */
 #estudios {
-    background-color: #FAF8F5; /* Un fondo blanco roto muy sutil */
+    background-color: #FAF8F5;
     padding: 100px 0;
 }

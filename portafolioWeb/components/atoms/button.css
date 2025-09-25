@@ -1,49 +1,99 @@
+/*
+    ================================================================================
+    Componente:     Átomo - Botón (button.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para los diferentes tipos de botones
+                    utilizados en la aplicación. Sigue un enfoque modular donde
+                    una clase base (.btn-custom) define la estructura y las
+                    clases modificadoras definen la apariencia.
+    ================================================================================
+*/
 
-
+/**
+ * -----------------------------------------------------------------------------
+ * .btn-custom: Clase base para botones personalizados.
+ * -----------------------------------------------------------------------------
+ * Define la estructura, espaciado, tipografía y transiciones comunes a todos
+ * los botones principales del sitio.
+ */
 .btn-custom {
     background-color: transparent;
+    border: 2px solid;
     border-radius: 8px;
     padding: 12px 30px;
     font-weight: 600;
     text-decoration: none;
-    display: inline-block;
-    border: 2px solid; /* Borde sólido, el color lo define el modificador */
-    transition: all 0.3s ease;
     text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
+/*
+ * Efecto hover general para la clase base.
+ * Define un cambio de color de texto genérico al pasar el cursor.
+ */
 .btn-custom:hover {
     color: var(--color-white);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * Modificador: .btn-accent
+ * -----------------------------------------------------------------------------
+ * Aplica una paleta de colores de "acento" (verde) al botón base.
+ * Utilizado para llamadas a la acción primarias.
+ */
 .btn-custom.btn-accent {
     color: #6d7846;
     border-color: #6d7846;
 }
 
+/*
+ * Efecto hover específico para el botón de acento.
+ * Al pasar el cursor, el fondo se rellena con el color de acento
+ * y el texto se vuelve blanco, creando un efecto de "relleno".
+ */
 .btn-custom.btn-accent:hover {
     background-color: #6d7846;
     border-color: #6d7846;
     color: var(--color-white);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .btn-custom-outline: Estilo de botón secundario (contorneado).
+ * -----------------------------------------------------------------------------
+ * Variante de botón utilizada para acciones secundarias, como "Limpiar"
+ * en un formulario. Se caracteriza por un borde visible y fondo transparente.
+ */
 .btn-custom-outline {
     background-color: transparent;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
     padding: 0.75rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 50px; /* Borde completamente redondeado para diferenciarlo */
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
+/*
+ * Efecto hover para el botón contorneado.
+ * Invierte los colores al pasar el cursor para un feedback visual claro.
+ */
 .btn-custom-outline:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .btn-danger-custom: Estilo de botón para acciones destructivas.
+ * -----------------------------------------------------------------------------
+ * Botón específico para operaciones que requieren precaución, como "Borrar Todo".
+ * Utiliza una paleta de colores roja para alertar visualmente al usuario.
+ */
 .btn-danger-custom {
-    background-color: #dc3545;
+    background-color: #dc3545; /* Tono de rojo estándar para peligro */
     color: white;
     border: none;
     padding: 0.4rem 0.8rem;
@@ -53,6 +103,10 @@
     transition: background-color 0.3s ease;
 }
 
+/*
+ * Efecto hover para el botón de peligro.
+ * Oscurece ligeramente el fondo para indicar interactividad.
+ */
 .btn-danger-custom:hover {
-    background-color: #c82333;
+    background-color: #c82333; /* Un tono de rojo más oscuro */
 }

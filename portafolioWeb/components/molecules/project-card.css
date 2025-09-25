@@ -1,25 +1,61 @@
-/* components/molecules/project-card.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Tarjeta de Proyecto (project-card.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para las tarjetas que muestran
+                    los proyectos individuales en la sección "Proyectos".
+                    Esta molécula está diseñada para ser flexible en altura
+                    y alinear su contenido de manera consistente.
+    ================================================================================
+*/
 
-/* components/molecules/project-card.css */
-
+/**
+ * -----------------------------------------------------------------------------
+ * .project-card: El contenedor principal de la tarjeta.
+ * -----------------------------------------------------------------------------
+ * - `height: 100%`: Permite que la tarjeta ocupe toda la altura de su
+ *   columna en el grid de Bootstrap, facilitando la creación de tarjetas
+ *   de igual altura en una fila.
+ * - `display: flex`, `flex-direction: column`: Establece un contexto de
+ *   flexbox vertical para que el .project-card-body se expanda.
+ * - `border`, `box-shadow`: Definen la apariencia visual con un borde de
+ *   acento y una sombra sutil.
+ * - `transition`: Anima suavemente los cambios en el estado :hover.
+ */
 .project-card {
     background: var(--color-white);
     border-radius: 16px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* CAMBIO CLAVE: Borde con el nuevo color verde */
-    border: 1px solid #6d7846; 
+    border: 1px solid #6d7846;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * :hover pseudo-clase para .project-card.
+ * -----------------------------------------------------------------------------
+ * Proporciona un feedback visual al elevar la tarjeta (`transform`) y aplicar
+ * una sombra de "resplandor" (glow) con el color de acento del sitio,
+ * indicando claramente que es un elemento interactivo.
+ */
 .project-card:hover {
     transform: translateY(-10px);
-    /* CAMBIO CLAVE: Sombra verde para el efecto "glow" */
-    box-shadow: 0 10px 30px rgba(109, 120, 70, 0.2); 
+    box-shadow: 0 10px 30px rgba(109, 120, 70, 0.2);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .project-card-body: Contenedor interno para el contenido.
+ * -----------------------------------------------------------------------------
+ * - `padding`: Proporciona el espaciado interno de la tarjeta.
+ * - `display: flex`, `flex-direction: column`: Organiza los elementos
+ *   internos (icono, título, texto, etc.) en una columna.
+ * - `height: 100%`: Asegura que este cuerpo ocupe todo el espacio
+ *   disponible dentro del contenedor .project-card.
+ */
 .project-card-body {
     padding: 2.5rem;
     display: flex;
@@ -27,11 +63,20 @@
     height: 100%;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .project-icon: Icono decorativo en la parte superior de la tarjeta.
+ * -----------------------------------------------------------------------------
+ * Crea un contenedor estilizado para el icono del proyecto.
+ * - `display: inline-flex`, `align-items`, `justify-content`: Centran
+ *   perfectamente el icono de Font Awesome dentro del contenedor.
+ * - `background-color`, `color`, `border-radius`: Definen la apariencia
+ *   visual del contenedor del icono con la paleta de colores del sitio.
+ */
 .project-icon {
     font-size: 1.8rem;
-    /* CAMBIO CLAVE: Icono verde con fondo verde claro */
-    color: #6d7846; 
-    background-color: #f1f3ed; /* Un verde muy pálido derivado del principal */
+    color: #6d7846;
+    background-color: #f1f3ed;
     border-radius: 12px;
     width: 60px;
     height: 60px;
@@ -41,21 +86,40 @@
     margin-bottom: 1.5rem;
 }
 
-
+/**
+ * -----------------------------------------------------------------------------
+ * Estilos tipográficos para el título y la descripción del proyecto.
+ * -----------------------------------------------------------------------------
+ */
 .project-card-body h4 {
     font-weight: 700;
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
     color: var(--color-bg-dark);
     margin-bottom: 0.75rem;
 }
 
+/*
+ * El párrafo descriptivo.
+ * - `flex-grow: 1`: Esta es una propiedad clave en el layout. Hace que el
+ *   párrafo se expanda para ocupar todo el espacio vertical disponible,
+ *   empujando el contenido siguiente (la lista de etiquetas y el botón)
+ *   hacia la parte inferior de la tarjeta. Esto asegura que los botones de
+ *   todas las tarjetas en una fila estén siempre alineados verticalmente,
+ *   independientemente de la longitud del texto de cada una.
+ */
 .project-card-body p {
-    flex-grow: 1; 
+    flex-grow: 1;
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * Espaciado para la lista de etiquetas.
+ * -----------------------------------------------------------------------------
+ * Añade un margen inferior para separar las etiquetas del botón de acción.
+ */
 .project-card-body .tag-list {
     margin-bottom: 2rem;
 }

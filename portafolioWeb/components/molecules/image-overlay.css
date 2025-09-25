@@ -1,5 +1,29 @@
-/* components/molecules/image-overlay.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Superposición de Imagen (image-overlay.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define el estilo para la capa de texto que se superpone a las
+                    imágenes, como en las tarjetas de pasatiempos (.hobby-card).
+                    Esta molécula es responsable de la legibilidad del texto y
+                    de las animaciones de interacción.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .image-overlay: Contenedor principal de la superposición.
+ * -----------------------------------------------------------------------------
+ * Crea una capa sobre una imagen para contener texto.
+ * - `position: absolute`: Lo posiciona relativo a su contenedor padre
+ *   (que debe ser `position: relative`, como .hobby-card).
+ * - `bottom`, `left`, `right`: Ancla la capa a la parte inferior del contenedor.
+ * - `background: linear-gradient`: Aplica un gradiente que va de un negro
+ *   semitransparente en la parte inferior a totalmente transparente en la
+ *   superior. Esto asegura que el texto blanco sea legible sin importar
+ *   el contenido de la imagen de fondo.
+ * - `z-index: 2`: Es fundamental para asegurar que esta capa se renderice
+ *   encima de la imagen de fondo (.hobby-card-bg), que tiene un z-index inferior.
+ */
 .image-overlay {
     position: absolute;
     bottom: 0;
@@ -8,10 +32,17 @@
     padding: 2rem;
     background: linear-gradient(to top, rgba(0,0,0,0.9) 25%, transparent 100%);
     color: var(--color-white);
-    z-index: 2; /* Se asegura de estar sobre la imagen (.hobby-card-bg) */
+    z-index: 2;
     transition: all 0.4s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * Estilos para el título (h4) dentro de la superposición.
+ * -----------------------------------------------------------------------------
+ * Define la tipografía del título principal. Su `transform` inicial es la
+ * posición de reposo desde la cual se animará en el estado :hover.
+ */
 .image-overlay h4 {
     font-family: var(--font-primary);
     font-weight: 700;
@@ -22,6 +53,17 @@
     transition: transform 0.4s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * Estilos para el párrafo (p) dentro de la superposición.
+ * -----------------------------------------------------------------------------
+ * Define la tipografía del texto descriptivo y su estado inicial para la animación.
+ * - `opacity: 0`: Hace que el párrafo sea invisible por defecto.
+ * - `transform: translateY(10px)`: Lo desplaza 10px hacia abajo de su
+ *   posición final.
+ * - `transition-delay`: Retrasa ligeramente el inicio de su animación para
+ *   un efecto más escalonado y refinado.
+ */
 .image-overlay p {
     font-family: var(--font-primary);
     font-weight: 300;
@@ -32,15 +74,28 @@
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
-    transition-delay: 0.1s; 
+    transition-delay: 0.1s;
 }
 
-/* --- EFECTOS HOVER (se mantienen igual) --- */
+/**
+ * =============================================================================
+ * EFECTOS DE INTERACCIÓN (:hover)
+ * =============================================================================
+ * Estas reglas se activan cuando el usuario pasa el cursor sobre la tarjeta
+ * contenedora (.hobby-card).
+ */
 
+/*
+ * Anima el título (h4) para que se desplace 10px hacia arriba.
+ */
 .hobby-card:hover .image-overlay h4 {
     transform: translateY(-10px);
 }
 
+/*
+ * Anima el párrafo (p) para que aparezca (fade in) y se deslice
+ * hacia arriba hasta su posición final.
+ */
 .hobby-card:hover .image-overlay p {
     opacity: 1;
     transform: translateY(0);

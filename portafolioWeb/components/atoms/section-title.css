@@ -1,5 +1,28 @@
-/* components/atoms/section-title.css */
+/*
+    ================================================================================
+    Componente:     Átomo - Título de Sección (section-title.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para los títulos principales de cada
+                    sección (ej. "Nuestra Formación", "Proyectos Destacados").
+                    Establece una apariencia consistente y jerárquicamente
+                    importante en toda la página.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .section-title: Estilo base para los títulos de sección.
+ * -----------------------------------------------------------------------------
+ * - `font-family`: Utiliza la tipografía artística "Great Vibes" para un
+ *   impacto visual distintivo y elegante.
+ * - `color`: Aplica el color oscuro principal para un alto contraste.
+ * - `text-align`: Centra el título horizontalmente en su contenedor.
+ * - `position: relative`: Necesario para posicionar el pseudo-elemento
+ *   decorativo '::after' correctamente.
+ * - `padding-bottom`, `margin-bottom`: Crean espaciado vertical alrededor
+ *   del título y su línea decorativa.
+ * - `font-size`: Establece el tamaño de fuente base para dispositivos móviles.
+ */
 .section-title {
     font-family: var(--font-artistic);
     font-weight: normal;
@@ -8,35 +31,50 @@
     position: relative;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
-
-    /* Tamaño base para móviles (el más pequeño) */
-    font-size: 3.5rem; 
+    font-size: 3.5rem;
 }
 
-/* --- TAMAÑOS RESPONSIVE --- */
 
-/* Para tabletas (a partir de 768px) */
+/**
+ * -----------------------------------------------------------------------------
+ * Media Queries para Tipografía Responsiva (Mobile-First).
+ * -----------------------------------------------------------------------------
+ * Aumenta gradualmente el tamaño de la fuente del título a medida que el
+ * ancho de la pantalla se incrementa. Esto asegura que el título sea impactante
+ * pero no abrumador en ningún dispositivo.
+ */
+
+/* Para tabletas y pantallas más grandes */
 @media (min-width: 768px) {
     .section-title {
         font-size: 4rem;
     }
 }
 
-/* Para escritorios pequeños (a partir de 992px) */
+/* Para portátiles y pantallas de escritorio pequeñas */
 @media (min-width: 992px) {
     .section-title {
-        font-size: 5rem; /* ¡Más grande que tu original para mayor impacto! */
+        font-size: 5rem;
     }
 }
 
-/* Para escritorios muy grandes (a partir de 1200px) */
+/* Para pantallas de escritorio grandes */
 @media (min-width: 1200px) {
     .section-title {
-        font-size: 5.5rem; /* Aún más grande en pantallas XL */
+        font-size: 5.5rem;
     }
 }
 
 
+/**
+ * -----------------------------------------------------------------------------
+ * ::after Pseudo-elemento para el subrayado decorativo.
+ * -----------------------------------------------------------------------------
+ * Crea una línea corta y centrada debajo del título. Este elemento visual
+ * añade un toque de refinamiento y ayuda a anclar el título en el diseño.
+ * - `left: 50%` y `transform: translateX(-50%)`: Es la técnica estándar para
+ *   centrar horizontalmente un elemento posicionado de forma absoluta.
+ */
 .section-title::after {
     content: '';
     position: absolute;

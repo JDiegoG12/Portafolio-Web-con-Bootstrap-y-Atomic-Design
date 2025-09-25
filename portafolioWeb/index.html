@@ -1,31 +1,52 @@
 <!DOCTYPE html>
+<!--
+    ================================================================================
+    Documento:      index.html
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Página principal del portafolio, estructurada como una "Single
+                    Page Application" (SPA) que presenta información personal,
+                    académica, proyectos y un formulario de contacto interactivo.
+    Metodología:    La estructura del CSS sigue los principios de Atomic Design
+                    para garantizar la modularidad, escalabilidad y mantenibilidad
+                    de los estilos.
+    Autores:        Sofía Arango Yanza y Juan Diego Gómez
+    Fecha:          Septiembre 2025
+    ================================================================================
+-->
 <html lang="es">
 
 <head>
+    <!-- Configuración de metadatos esenciales para el navegador -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio | Sofi y Diego</title>
 
-    <!-- LIBRERÍAS EXTERNAS -->
+    <!-- =================================================================== -->
+    <!-- CDN Y LIBRERÍAS EXTERNAS -->
+    <!-- =================================================================== -->
+    <!-- Framework Bootstrap para la estructura y componentes responsivos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
-        rel="stylesheet">
+    <!-- Google Fonts para la tipografía principal (Poppins) y decorativa (Great Vibes) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Font Awesome para la iconografía en todo el sitio -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Librería Animate On Scroll (AOS) para las animaciones de entrada de elementos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- =================================================================== -->
-    <!-- ESTILOS CON ATOMIC DESIGN (¡ESTA ES LA PARTE CLAVE!) -->
+    <!-- ESTRUCTURA DE ESTILOS BASADA EN ATOMIC DESIGN -->
     <!-- =================================================================== -->
-    <!-- 1. Global y Variables -->
+    <!-- Nivel 1: Archivo de configuración global y variables CSS -->
     <link rel="stylesheet" href="css/custom.css">
 
-    <!-- 2. Átomos (Las piezas más pequeñas) -->
+    <!-- Nivel 2: Átomos - Los bloques de construcción más básicos de la UI -->
     <link rel="stylesheet" href="components/atoms/button.css">
     <link rel="stylesheet" href="components/atoms/form-input.css">
     <link rel="stylesheet" href="components/atoms/section-title.css">
     <link rel="stylesheet" href="components/atoms/tag.css">
     <link rel="stylesheet" href="components/atoms/social-icon.css">
 
-    <!-- 3. Moléculas (Grupos de átomos) -->
+    <!-- Nivel 3: Moléculas - Grupos de átomos que funcionan como una unidad -->
     <link rel="stylesheet" href="components/molecules/study-card.css">
     <link rel="stylesheet" href="components/molecules/styled-table.css">
     <link rel="stylesheet" href="components/molecules/hobby-card.css">
@@ -37,7 +58,7 @@
     <link rel="stylesheet" href="components/molecules/toast.css">
     <link rel="stylesheet" href="components/molecules/footer-contact-info.css">
 
-    <!-- 4. Organismos (Secciones completas) -->
+    <!-- Nivel 4: Organismos - Componentes complejos que forman secciones discretas -->
     <link rel="stylesheet" href="components/organisms/header.css">
     <link rel="stylesheet" href="components/organisms/inicio-section.css">
     <link rel="stylesheet" href="components/organisms/estudios-section.css">
@@ -45,18 +66,20 @@
     <link rel="stylesheet" href="components/organisms/proyectos-section.css">
     <link rel="stylesheet" href="components/organisms/contacto-section.css">
     <link rel="stylesheet" href="components/organisms/footer.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
 
+    <!-- =================================================================== -->
+    <!-- ORGANISMO: Encabezado y Barra de Navegación Principal -->
+    <!-- =================================================================== -->
     <header class="header-container">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand-custom" href="#inicio">[Sofi y Diego]</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><i
-                        class="fas fa-bars"></i></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
@@ -70,72 +93,64 @@
         </nav>
     </header>
 
+    <!-- Contenedor principal para todas las secciones de la página -->
     <main>
-        <!-- ================================================================= -->
-        <!-- SECCIÓN 1: INICIO                         -->
-        <!-- ================================================================= -->
+
+        <!-- =================================================================== -->
+        <!-- SECCIÓN 1: Inicio (Hero Carousel) -->
+        <!-- =================================================================== -->
         <section id="inicio">
+            <!-- Componente carrusel de Bootstrap para presentar a los autores -->
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <!-- Indicadores de slide -->
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
                 </div>
                 <div class="carousel-inner">
 
-                    <!-- Slide 1: Sofía -->
+                    <!-- Slide 1: Presentación de Sofía -->
                     <div class="carousel-item active" data-bs-interval="7000">
-                        <img src="assets/images/paginaInicio2.png" class="d-block w-100" alt="Fondo Sofía">
-                        <!-- CAMBIO: Clases de Bootstrap para centrado vertical perfecto -->
+                        <img src="assets/images/paginaInicio2.png" class="d-block w-100" alt="Fondo de presentación de Sofía">
                         <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-
-                            <!-- CAMBIO: Convertido de <img> a <div> y se usa la imagen de fondo -->
+                            <!-- Fotografía personal implementada como fondo para un control de estilo superior -->
                             <div class="personal-photo" style="background-image: url('assets/images/sofia.jpeg')"></div>
-
                             <div class="hero-text-box">
                                 <h2 class="hero-title">Sofía Arango Yanza</h2>
                                 <p class="hero-subtitle">Enero 11 del 2006</p>
-                                <p class="hero-description">Mi aspiración es ser una desarrolladora full stack,
-                                    fortaleciendo mis conocimientos en IA.</p>
+                                <p class="hero-description">Mi aspiración es ser una desarrolladora full stack, fortaleciendo mis conocimientos en IA.</p>
                             </div>
-
                         </div>
                     </div>
 
-                    <!-- Slide 2: Diego -->
+                    <!-- Slide 2: Presentación de Diego -->
                     <div class="carousel-item" data-bs-interval="7000">
-                        <img src="assets/images/paginaInicio.png" class="d-block w-100" alt="Fondo Diego">
-                        <!-- CAMBIO: Clases de Bootstrap para centrado vertical perfecto -->
+                        <img src="assets/images/paginaInicio.png" class="d-block w-100" alt="Fondo de presentación de Diego">
                         <div class="carousel-caption d-flex flex-column justify-content-center h-100">
-
-                            <!-- CAMBIO: Convertido de <img> a <div> y se usa la imagen de fondo -->
-                            <div class="personal-photo" style="background-image: url('assets/images/Diego.png')">
-                            </div>
-
+                            <div class="personal-photo" style="background-image: url('assets/images/Diego.png')"></div>
                             <div class="hero-text-box">
                                 <h2 class="hero-title">Juan Diego Gómez</h2>
                                 <p class="hero-subtitle">Julio 25 2004</p>
-                                <p class="hero-description">Aspiro a convertirme en un referente en mi área, aportando
-                                    soluciones creativas y eficientes.</p>
+                                <p class="hero-description">Aspiro a convertirme en un referente en mi área, aportando soluciones creativas y eficientes.</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                <!-- Controles de navegación del carrusel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
             </div>
         </section>
-        <!-- ================================================================= -->
-        <!-- SECCIÓN 2: ESTUDIOS                             -->
-        <!-- ================================================================= -->
+
+        <!-- =================================================================== -->
+        <!-- SECCIÓN 2: Estudios -->
+        <!-- =================================================================== -->
         <section id="estudios" class="section-container">
             <div class="container">
                 <h2 class="section-title display-3" data-aos="fade-down">Nuestra Formación</h2>
                 <div class="row g-4 justify-content-center mt-4">
 
-                    <!-- Tarjeta de Sofía -->
+                    <!-- Columna para la formación de Sofía -->
                     <div class="col-lg-6" data-aos="fade-up">
                         <div class="study-card">
                             <h3>Formación de Sofía</h3>
@@ -168,7 +183,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta de Diego -->
+                    <!-- Columna para la formación de Diego -->
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="study-card">
                             <h3>Formación de Diego</h3>
@@ -200,23 +215,21 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-        <!-- ================================================================= -->
-        <!-- SECCIÓN 3: PASATIEMPOS                          -->
-        <!-- ================================================================= -->
+
+        <!-- =================================================================== -->
+        <!-- SECCIÓN 3: Pasatiempos -->
+        <!-- =================================================================== -->
         <section id="pasatiempos" class="section-container">
             <div class="container">
                 <h2 class="section-title display-3" data-aos="fade-down">Pasatiempos</h2>
                 <div class="row g-4 justify-content-center mt-4">
 
-                    <!-- Tarjeta 1: Amistades -->
+                    <!-- Tarjeta de pasatiempo: Amistades -->
                     <div class="col-md-6 col-lg-5" data-aos="zoom-in-up">
-                        <!-- El style="background-image..." se elimina de aquí -->
                         <div class="hobby-card">
-                            <!-- AÑADIMOS LA IMAGEN COMO UN ELEMENTO REAL -->
                             <img src="assets/images/pasatiempo1.png" alt="Amigos compartiendo" class="hobby-card-bg">
                             <div class="image-overlay">
                                 <h4>Compartir con Amigos</h4>
@@ -225,11 +238,10 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2: Deporte -->
+                    <!-- Tarjeta de pasatiempo: Deporte -->
                     <div class="col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="100">
                         <div class="hobby-card">
-                            <img src="assets/images/pasatiempo2.png" alt="Gimnasio con caminadoras"
-                                class="hobby-card-bg">
+                            <img src="assets/images/pasatiempo2.png" alt="Gimnasio con caminadoras" class="hobby-card-bg">
                             <div class="image-overlay">
                                 <h4>Hacer Deporte</h4>
                                 <p>Nos mantenemos activos y saludables practicando nuestros deportes favoritos.</p>
@@ -237,127 +249,110 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 3: Videojuegos -->
+                    <!-- Tarjeta de pasatiempo: Videojuegos -->
                     <div class="col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="200">
                         <div class="hobby-card">
-                            <img src="assets/images/pasatiempo3.png" alt="Personajes de videojuego"
-                                class="hobby-card-bg">
+                            <img src="assets/images/pasatiempo3.png" alt="Personajes de videojuego" class="hobby-card-bg">
                             <div class="image-overlay">
                                 <h4>Videojuegos</h4>
                                 <p>Exploramos mundos virtuales y disfrutamos de desafíos estratégicos.</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
+        <!-- =================================================================== -->
+        <!-- SECCIÓN 4: Proyectos -->
+        <!-- =================================================================== -->
         <section id="proyectos" class="section-container">
             <div class="container">
                 <h2 class="section-title display-3" data-aos="fade-down">Proyectos Destacados</h2>
                 <div class="row g-4 mt-4 justify-content-center">
 
-                    <!-- Proyecto 1: Detección de Ondas Sísmicas P -->
+                    <!-- Tarjeta de Proyecto 1: Detección de Ondas Sísmicas -->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card">
                             <div class="project-card-body">
                                 <i class="fa-solid fa-wave-square project-icon"></i>
                                 <h4>Detección de Ondas Sísmicas P</h4>
-                                <p>Modelo de Deep Learning con Redes Neuronales Convolucionales (CNN) para la detección
-                                    automática y precisa de ondas P en señales sísmicas.</p>
+                                <p>Modelo de Deep Learning con Redes Neuronales Convolucionales (CNN) para la detección automática y precisa de ondas P en señales sísmicas.</p>
                                 <ul class="tag-list">
                                     <li class="tag">Python</li>
                                     <li class="tag">TensorFlow</li>
                                     <li class="tag">Optuna</li>
                                 </ul>
-                                <a href="https://drive.google.com/file/d/10ZmpkGJcQFXapjpuc83A6p7ZhhPzXkyr/view?usp=sharing" target="_blank" class="btn-custom btn-accent">Ver Documento <i
-                                        class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                                <a href="https://drive.google.com/file/d/10ZmpkGJcQFXapjpuc83A6p7ZhhPzXkyr/view?usp=sharing" target="_blank" class="btn-custom btn-accent">Ver Documento <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Proyecto 2: Portafolio Personal -->
+                    <!-- Tarjeta de Proyecto 2: Portafolio Personal -->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card">
                             <div class="project-card-body">
                                 <i class="fa-solid fa-palette project-icon"></i>
                                 <h4>Portafolio Personal</h4>
-                                <p>Portafolio web de una sola página, construido para presentar nuestras habilidades.
-                                    Cuenta con un carrusel interactivo y animaciones.</p>
+                                <p>Portafolio web de una sola página, construido para presentar nuestras habilidades. Cuenta con un carrusel interactivo y animaciones.</p>
                                 <ul class="tag-list">
                                     <li class="tag">HTML5</li>
                                     <li class="tag">CSS3</li>
                                     <li class="tag">JavaScript</li>
                                 </ul>
-                                <a href="https://github.com/Sofii141/Portafolioweb" target="_blank"
-                                    class="btn-custom btn-accent">Ver en GitHub <i
-                                        class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                                <a href="https://github.com/Sofii141/Portafolioweb" target="_blank" class="btn-custom btn-accent">Ver en GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Proyecto 3: Sistema de Gestión -->
+                    <!-- Tarjeta de Proyecto 3: Sistema de Gestión -->
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-card">
                             <div class="project-card-body">
                                 <i class="fa-solid fa-sitemap project-icon"></i>
                                 <h4>Sistema de Gestión de Proyectos</h4>
-                                <p>Sistema de gestión basado en microservicios que conecta a estudiantes y empresas,
-                                    usando comunicación asíncrona.</p>
-                                <!-- CAMBIO DE CLASE AQUÍ -->
+                                <p>Sistema de gestión basado en microservicios que conecta a estudiantes y empresas, usando comunicación asíncrona.</p>
                                 <ul class="tag-list">
                                     <li class="tag">Java 21</li>
                                     <li class="tag">Spring Boot</li>
                                     <li class="tag">MariaDB</li>
                                 </ul>
-                                <a href="https://github.com/paulamunoz06/GestionProyectosMicro" target="_blank"
-                                    class="btn-custom btn-accent">Ver en GitHub <i
-                                        class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                                <a href="https://github.com/paulamunoz06/GestionProyectosMicro" target="_blank" class="btn-custom btn-accent">Ver en GitHub <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ================================================================= -->
-        <!-- SECCIÓN 5: CONTACTO (VERSIÓN CON FRAMEWORK)                       -->
-        <!-- ================================================================= -->
+        <!-- =================================================================== -->
+        <!-- SECCIÓN 5: Contacto -->
+        <!-- =================================================================== -->
         <section id="contacto" class="section-container">
             <div class="container">
                 <h2 class="section-title display-3" data-aos="fade-down">Hablemos</h2>
                 <div class="row g-5 mt-4">
 
-                    <!-- Columna del Formulario (Organismo) -->
+                    <!-- Columna Izquierda: Formulario de Contacto -->
                     <div class="col-lg-7" data-aos="fade-right">
                         <form id="contact-form" class="contact-form" novalidate>
-                            <!-- Campo oculto para el ID del contacto (para ediciones) -->
                             <input type="hidden" id="contact-id" name="id">
-
-                            <!-- Fila con Nombre y Email -->
                             <div class="row g-3">
                                 <div class="col-md-6 form-group">
                                     <label for="nombre" class="form-label">Nombre Completo</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" required
-                                        placeholder="Tu nombre completo">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Tu nombre completo">
                                     <span class="error-message"></span>
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="email" class="form-label">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="email" name="email" required
-                                        placeholder="tu@correo.com">
+                                    <input type="email" class="form-control" id="email" name="email" required placeholder="tu@correo.com">
                                     <span class="error-message"></span>
                                 </div>
                             </div>
-
-                            <!-- Fila con Teléfono y Motivo -->
                             <div class="row g-3 mt-3">
                                 <div class="col-md-6 form-group">
                                     <label for="telefono" class="form-label">Teléfono (10 dígitos)</label>
-                                    <input type="tel" class="form-control" id="telefono" name="telefono" required
-                                        placeholder="Ej: 3001234567">
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ej: 3001234567">
                                     <span class="error-message"></span>
                                 </div>
                                 <div class="col-md-6 form-group">
@@ -372,44 +367,33 @@
                                     <span class="error-message"></span>
                                 </div>
                             </div>
-
-                            <!-- Fila para el Mensaje -->
                             <div class="form-group mt-3">
                                 <label for="mensaje" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required
-                                    placeholder="Cuéntanos tu idea..."></textarea>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos tu idea..."></textarea>
                                 <span class="error-message"></span>
                             </div>
-
-                            <!-- Fila para Preferencia y Términos -->
                             <div class="row mt-4 align-items-center">
                                 <div class="col-md-6 form-group">
                                     <label class="form-label">Preferencia de Contacto</label>
                                     <div class="d-flex">
                                         <div class="form-check me-4">
-                                            <input class="form-check-input" type="radio" name="preferenciaContacto"
-                                                id="preferenciaEmail" value="email" checked>
+                                            <input class="form-check-input" type="radio" name="preferenciaContacto" id="preferenciaEmail" value="email" checked>
                                             <label class="form-check-label" for="preferenciaEmail">Email</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="preferenciaContacto"
-                                                id="preferenciaTelefono" value="telefono">
+                                            <input class="form-check-input" type="radio" name="preferenciaContacto" id="preferenciaTelefono" value="telefono">
                                             <label class="form-check-label" for="preferenciaTelefono">Teléfono</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="aceptaTerminos"
-                                            name="aceptaTerminos" required>
-                                        <label class="form-check-label" for="aceptaTerminos">Acepto los términos y
-                                            condiciones</label>
+                                        <input class="form-check-input" type="checkbox" id="aceptaTerminos" name="aceptaTerminos" required>
+                                        <label class="form-check-label" for="aceptaTerminos">Acepto los términos y condiciones</label>
                                         <span class="error-message d-block"></span>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Botones de Acción -->
                             <div class="d-flex gap-3 mt-4">
                                 <button type="submit" class="btn-custom flex-grow-1">Guardar Contacto</button>
                                 <button type="reset" class="btn-custom-outline">Limpiar</button>
@@ -417,7 +401,7 @@
                         </form>
                     </div>
 
-                    <!-- Columna de la Lista de Contactos (Organismo) -->
+                    <!-- Columna Derecha: Lista de Contactos Guardados -->
                     <div class="col-lg-5" data-aos="fade-left">
                         <div class="list-container">
                             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -425,7 +409,7 @@
                                 <button id="borrar-todo-btn" class="btn-danger-custom">Borrar Todo</button>
                             </div>
                             <ul id="contact-list" class="list-group">
-                                <!-- Los contactos se renderizarán aquí desde JS -->
+                                <!-- El contenido de esta lista es renderizado dinámicamente por JavaScript -->
                             </ul>
                         </div>
                     </div>
@@ -433,11 +417,12 @@
             </div>
         </section>
 
-        <!-- ================================================================= -->
-        <!-- COMPONENTES DE UI ADICIONALES (fuera de la sección principal)     -->
-        <!-- ================================================================= -->
+        <!-- =================================================================== -->
+        <!-- COMPONENTES DE UI GLOBALES Y PLANTILLAS -->
+        <!-- =================================================================== -->
 
-        <!-- Plantilla para un ítem de la lista de contactos (Molécula) -->
+        <!-- Plantilla <template> para un ítem de la lista de contactos -->
+        <!-- Es utilizada por JavaScript para clonar y crear nuevos elementos en la lista dinámicamente. -->
         <template id="contact-item-template">
             <li class="list-group-item contact-item">
                 <div class="d-flex w-100 justify-content-between">
@@ -451,15 +436,14 @@
                     <i class="fas fa-phone me-2 text-primary"></i><span class="contact-phone"></span>
                 </p>
                 <div class="contact-actions">
-                    <button class="btn btn-sm btn-icon edit-btn" title="Editar"><i
-                            class="fas fa-pencil-alt"></i></button>
-                    <button class="btn btn-sm btn-icon delete-btn" title="Eliminar"><i
-                            class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-sm btn-icon edit-btn" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn btn-sm btn-icon delete-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </li>
         </template>
 
-        <!-- Modal de Confirmación Personalizado (Molécula) -->
+        <!-- Componente: Modal de Confirmación -->
+        <!-- Se mantiene oculto por defecto y es controlado por JavaScript para confirmar acciones críticas. -->
         <div class="custom-modal-overlay hidden" id="custom-modal-overlay">
             <div class="custom-modal">
                 <p id="modal-message">¿Estás seguro?</p>
@@ -470,38 +454,36 @@
             </div>
         </div>
 
-        <!-- Notificación Toast Personalizada (Molécula) -->
+        <!-- Componente: Notificación Toast -->
+        <!-- Se utiliza para mostrar mensajes de feedback al usuario (éxito, error, etc.). -->
         <div class="toast-notification" id="toast-notification">
             <i id="toast-icon" class="fas"></i>
             <p id="toast-message">Mensaje de notificación.</p>
         </div>
     </main>
 
+    <!-- =================================================================== -->
+    <!-- ORGANISMO: Pie de Página -->
+    <!-- =================================================================== -->
     <footer class="footer-container">
         <div class="container">
             <div class="row g-4 justify-content-between">
 
-                <!-- Columna 1: About (Molécula) -->
+                <!-- Columna de descripción y redes sociales -->
                 <div class="col-lg-5 col-md-12 footer-about">
                     <a class="footer-brand" href="#inicio">[Sofi y Diego]</a>
                     <p class="footer-description">
-                        Un portafolio digital donde la creatividad y el código se encuentran. Gracias por acompañarnos
-                        en nuestro viaje de desarrollo.
+                        Un portafolio digital donde la creatividad y el código se encuentran. Gracias por acompañarnos en nuestro viaje de desarrollo.
                     </p>
                     <div class="footer-socials">
-                        <a href="https://github.com/Sofii141" target="_blank" class="social-icon"
-                            aria-label="GitHub de Sofía"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/tu-usuario-sofia" target="_blank" class="social-icon"
-                            aria-label="LinkedIn de Sofía"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/JDiegoG12" target="_blank" class="social-icon"
-                            aria-label="GitHub de Diego"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/juan-diego-g%C3%B3mez-garc%C3%A9s-823625313/"
-                            target="_blank" class="social-icon" aria-label="LinkedIn de Diego"><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Sofii141" target="_blank" class="social-icon" aria-label="GitHub de Sofía"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/tu-usuario-sofia" target="_blank" class="social-icon" aria-label="LinkedIn de Sofía"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/JDiegoG12" target="_blank" class="social-icon" aria-label="GitHub de Diego"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/juan-diego-g%C3%B3mez-garc%C3%A9s-823625313/" target="_blank" class="social-icon" aria-label="LinkedIn de Diego"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
-                <!-- Columna 2: Contacto Sofía (Molécula) -->
+                <!-- Columna de información de contacto de Sofía -->
                 <div class="col-lg-3 col-md-6 footer-contact-info">
                     <h3 class="footer-section-title">Contacto Sofía</h3>
                     <ul class="contact-list">
@@ -511,7 +493,7 @@
                     </ul>
                 </div>
 
-                <!-- Columna 3: Contacto Diego (Molécula) -->
+                <!-- Columna de información de contacto de Diego -->
                 <div class="col-lg-3 col-md-6 footer-contact-info">
                     <h3 class="footer-section-title">Contacto Diego</h3>
                     <ul class="contact-list">
@@ -520,23 +502,23 @@
                         <li><i class="fas fa-map-marker-alt"></i> Popayán, Colombia</li>
                     </ul>
                 </div>
-
             </div>
-
             <hr class="footer-divider">
-
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2025 Sofía Arango & Juan Diego Gómez. Todos los derechos reservados.
-                </p>
+                <p class="footer-copyright">&copy; 2025 Sofía Arango & Juan Diego Gómez. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-
+    <!-- =================================================================== -->
+    <!-- SCRIPTS JAVASCRIPT -->
+    <!-- =================================================================== -->
+    <!-- Bundle de Bootstrap que incluye Popper.js para componentes interactivos -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Librería Animate On Scroll (AOS) para inicializar las animaciones -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script type="module" src="js/contacto.js"></script>
-</body>
+    <!-- Archivo principal de la aplicación que contiene toda la lógica de JavaScript -->
+    <script src="js/app.js"></script>
 
+</body>
 </html>

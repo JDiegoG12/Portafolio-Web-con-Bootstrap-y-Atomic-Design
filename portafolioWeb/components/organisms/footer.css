@@ -1,11 +1,38 @@
-/* components/organisms/footer.css */
+/*
+    ================================================================================
+    Componente:     Organismo - Pie de Página (footer.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para el pie de página global del sitio.
+                    Este organismo contiene la marca, una breve descripción,
+                    iconos de redes sociales, información de contacto y el
+                    aviso de derechos de autor.
+    ================================================-===============================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .footer-container: Contenedor principal del pie de página.
+ * -----------------------------------------------------------------------------
+ * - `background-color`: Establece un fondo oscuro que contrasta con el
+ *   resto del contenido de la página, señalando claramente el final.
+ * - `padding`: Proporciona un espaciado vertical generoso para el contenido.
+ * - `margin-top: auto`: Una propiedad útil que, en el contexto de un layout
+ *   flexbox o grid en el `<body>`, puede ayudar a empujar el footer hacia la
+ *   parte inferior de la ventana en páginas con poco contenido.
+ */
 .footer-container {
     background-color: var(--color-bg-dark);
     padding: 4rem 0 2rem 0;
     margin-top: auto;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .footer-brand: El logotipo o marca en el pie de página.
+ * -----------------------------------------------------------------------------
+ * Estiliza el nombre "[Sofi y Diego]" con la tipografía artística, asegurando
+ * consistencia con el encabezado de la página.
+ */
 .footer-brand {
     font-family: var(--font-artistic);
     font-size: 2.5rem;
@@ -15,29 +42,63 @@
     margin-bottom: 1rem;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .footer-description: Texto descriptivo del pie de página.
+ * -----------------------------------------------------------------------------
+ * - `color: rgba(255, 255, 255, 0.7)`: Utiliza un color blanco con
+ *   transparencia para que el texto sea legible pero menos prominente que
+ *   la marca, creando una jerarquía visual clara.
+ * - `line-height`: Aumenta el espaciado entre líneas para mejorar la
+ *   legibilidad del párrafo.
+ */
 .footer-description {
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.8;
 }
 
-/* El organismo define el espaciado del contenedor de los iconos */
+/**
+ * -----------------------------------------------------------------------------
+ * .footer-socials: Contenedor para los iconos de redes sociales.
+ * -----------------------------------------------------------------------------
+ * Organiza los átomos .social-icon en una fila horizontal.
+ * - `display: flex`: Activa el layout Flexbox.
+ * - `gap`: Crea un espaciado uniforme y limpio entre los iconos.
+ */
 .footer-socials {
     margin-top: 1.5rem;
     display: flex;
     gap: 0.5rem;
 }
 
-/* --- Átomo: Divisor y Copyright --- */
+/**
+ * =============================================================================
+ * ELEMENTOS ESTRUCTURALES: Divisor y Copyright
+ * =============================================================================
+ */
+
+/*
+ * .footer-divider: Línea horizontal que separa el contenido principal
+ * del footer de la nota de copyright.
+ */
 .footer-divider {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     margin: 3rem auto 2rem auto;
 }
 
+/*
+ * .footer-bottom: Contenedor para la sección final del pie de página.
+ */
 .footer-bottom {
     text-align: center;
 }
 
+/*
+ * .footer-copyright: Estilo para el texto de derechos de autor.
+ * Utiliza un color con mayor transparencia para darle la menor
+ * prominencia visual, como es habitual en este tipo de texto.
+ */
 .footer-copyright {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;

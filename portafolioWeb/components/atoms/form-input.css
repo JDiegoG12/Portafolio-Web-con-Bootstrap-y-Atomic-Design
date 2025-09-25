@@ -1,3 +1,26 @@
+/*
+    ================================================================================
+    Componente:     Átomo - Campo de Formulario (form-input.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos base para los campos de entrada de texto
+                    (input, textarea) y selección (select) utilizados en los
+                    formularios. Se personaliza la clase .form-control de
+                    Bootstrap para alinearla con la estética del sitio.
+    ================================================================================
+*/
+
+/**
+ * -----------------------------------------------------------------------------
+ * .form-control: Estilo base para campos de entrada.
+ * -----------------------------------------------------------------------------
+ * Sobrescribe los estilos por defecto de Bootstrap para la clase .form-control.
+ * - `background-color`: Un fondo semitransparente para integrarse con el
+ *   fondo texturizado de la página.
+ * - `border`: Un borde sutil que define los límites del campo.
+ * - `padding`: Espaciado interno adecuado para mejorar la legibilidad del texto.
+ * - `border-radius`: Bordes ligeramente redondeados para una apariencia suave.
+ * - `transition`: Suaviza los cambios visuales al interactuar con el campo.
+ */
 .form-control {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #d1c9bd;
@@ -5,11 +28,30 @@
     border-radius: 5px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * :focus pseudo-clase para .form-control.
+ * -----------------------------------------------------------------------------
+ * Define el estado visual del campo cuando está activo (seleccionado por el usuario).
+ * - `background-color`: Cambia a blanco opaco para mejorar el contraste del texto.
+ * - `border-color`: Resalta el borde con el color primario del tema.
+ * - `box-shadow`: Añade un resplandor sutil (glow) para indicar claramente
+ *   el foco, mejorando la accesibilidad y la experiencia de usuario (UX).
+ */
 .form-control:focus {
     background-color: var(--color-white);
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(134, 150, 132, 0.2);
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * ::placeholder pseudo-elemento para .form-control.
+ * -----------------------------------------------------------------------------
+ * Personaliza el color del texto de marcador de posición (placeholder) para
+ * asegurar un buen contraste y coherencia con la paleta de colores del diseño.
+ */
 .form-control::placeholder {
     color: #8a8a8a;
 }

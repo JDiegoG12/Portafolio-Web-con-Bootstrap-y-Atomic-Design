@@ -1,11 +1,38 @@
-/* components/molecules/styled-table.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Tabla Estilizada (styled-table.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para las tablas de datos, utilizadas
+                    dentro de las tarjetas de estudio (.study-card) para mostrar
+                    el historial académico de forma estructurada.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .styled-table: Clase base para la tabla.
+ * -----------------------------------------------------------------------------
+ * Resetea y establece propiedades fundamentales de la tabla.
+ * - `background-color`, `border`: Eliminan los estilos por defecto para
+ *   permitir una personalización completa.
+ * - `width: 100%`: Asegura que la tabla ocupe todo el ancho de su contenedor.
+ */
 .styled-table {
     background-color: transparent !important;
     border: none;
     width: 100%;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * th: Estilos para las celdas de encabezado de la tabla.
+ * -----------------------------------------------------------------------------
+ * Define una apariencia clara y jerárquica para la cabecera de la tabla.
+ * - `text-transform: uppercase`, `letter-spacing`: Mejoran la legibilidad y
+ *   dan un aspecto más formal a los títulos de columna.
+ * - `border-bottom`: Añade una línea de acento sólida que separa visualmente
+ *   la cabecera del cuerpo de la tabla.
+ */
 .styled-table th {
     background-color: transparent;
     border: none;
@@ -15,29 +42,48 @@
     letter-spacing: 1px;
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
-    /* CAMBIO CLAVE: La línea de la cabecera ahora es amarilla */
-    border-bottom: 2px solid #6d7846; 
+    border-bottom: 2px solid #6d7846;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * td: Estilos para las celdas de datos del cuerpo de la tabla.
+ * -----------------------------------------------------------------------------
+ * - `vertical-align: middle`: Centra verticalmente el contenido de las celdas,
+ *   especialmente útil para alinear el icono con el texto.
+ * - `border-bottom`: Añade una línea separadora muy sutil entre las filas.
+ */
 .styled-table td {
     padding: 1.25rem 1rem;
     vertical-align: middle;
     border: none;
     color: var(--color-bg-dark);
-    /* CAMBIO CLAVE: Separador de fila con un amarillo muy sutil */
-    border-bottom: 1px solid #f1f3ed; 
+    border-bottom: 1px solid #f1f3ed;
 }
 
+/*
+ * Elimina la línea separadora de la última fila para un acabado más limpio.
+ */
 .styled-table tr:last-child td {
     border-bottom: none;
 }
 
+/*
+ * Estilo para el texto en negrita dentro de las celdas.
+ */
 .styled-table strong {
     font-weight: 600;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .icon-level: Contenedor circular para el icono en cada fila.
+ * -----------------------------------------------------------------------------
+ * Crea un fondo estilizado para cada icono, haciéndolo más prominente.
+ * - `display: inline-flex`, `align-items`, `justify-content`: Centran
+ *   el icono de Font Awesome dentro del círculo.
+ */
 .styled-table .icon-level {
-    /* CAMBIO CLAVE: Icono y fondo con la paleta verde */
     color: #6d7846;
     background-color: #f1f3ed;
     width: 40px;
@@ -48,4 +94,31 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+/**
+ * =============================================================================
+ * AJUSTES RESPONSIVOS PARA DISPOSITIVOS PEQUEÑOS
+ * =============================================================================
+ */
+@media (max-width: 576px) {
+    /*
+     * Reduce el padding y el tamaño de la fuente de las celdas para que el
+     * contenido no se sienta comprimido en pantallas estrechas.
+     */
+    .styled-table td {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /*
+     * Reduce el tamaño del contenedor del icono y su margen para ganar
+     * espacio horizontal valioso en dispositivos móviles.
+     */
+    .styled-table .icon-level {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        margin-right: 0.75rem;
+    }
 }

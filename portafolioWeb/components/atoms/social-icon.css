@@ -1,5 +1,28 @@
-/* components/atoms/social-icon.css */
+/*
+    ================================================================================
+    Componente:     Átomo - Icono Social (social-icon.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para los enlaces a redes sociales,
+                    presentados como iconos circulares. Este componente se utiliza
+                    principalmente en el pie de página.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .social-icon: Clase principal para un enlace de red social.
+ * -----------------------------------------------------------------------------
+ * Transforma un enlace <a> en un contenedor circular para un icono.
+ * - `display: inline-flex`, `justify-content`, `align-items`: Utilizan el
+ *   modelo Flexbox para centrar perfectamente el icono (ej. de Font Awesome)
+ *   tanto vertical como horizontalmente dentro del círculo.
+ * - `width`, `height`, `border-radius: 50%`: Crean un círculo de tamaño fijo.
+ * - `border`: Un borde sutil y semitransparente que es visible sobre fondos
+ *   oscuros, como el del footer.
+ * - `color`: Establece el color del icono (el elemento <i> anidado).
+ * - `text-decoration: none`: Elimina el subrayado por defecto de los enlaces.
+ * - `transition`: Asegura una animación suave en el cambio de estado :hover.
+ */
 .social-icon {
     display: inline-flex;
     justify-content: center;
@@ -13,6 +36,14 @@
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * :hover pseudo-clase para .social-icon.
+ * -----------------------------------------------------------------------------
+ * Define el feedback visual cuando el usuario pasa el cursor sobre el icono.
+ * El fondo y el borde se rellenan con el color primario del tema, indicando
+ * claramente que el elemento es interactivo.
+ */
 .social-icon:hover {
     background-color: var(--color-primary);
     border-color: var(--color-primary);

@@ -1,6 +1,33 @@
+/*
+    ================================================================================
+    Componente:     Organismo - Sección de Proyectos (proyectos-section.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos de fondo para el contenedor principal de la
+                    sección "Proyectos Destacados" (<section id="proyectos">).
+                    Utiliza una combinación de color de fondo e imagen para
+                    crear un fondo con efecto de paralaje.
+    ================================================================================
+*/
+
+/**
+ * -----------------------------------------------------------------------------
+ * #proyectos: Selector de ID para la sección de proyectos.
+ * -----------------------------------------------------------------------------
+ * Aplica un fondo multicapa con un efecto de paralaje.
+ * - `background-color`: Establece un color de fondo base claro. Esto sirve
+ *   como un color de respaldo (fallback) que será visible si la imagen de
+ *   fondo no se carga por alguna razón.
+ * - `background-image`: Superpone una imagen sobre el color de fondo.
+ * - `background-size: cover`: Escala la imagen para que cubra completamente
+ *   el área de la sección, manteniendo sus proporciones y sin dejar espacios
+ *   en blanco.
+ * - `background-attachment: fixed`: Fija la imagen de fondo con respecto a la
+ *   ventana del navegador. Al desplazarse por la página, el contenido de la
+ *   sección se mueve sobre la imagen estática, creando un efecto de
+ *   profundidad conocido como paralaje.
+ */
 #proyectos {
     background-color: var(--color-bg-light);
-    background-image: url('assets/images/paginaInicio.png');
     background-size: cover;
     background-attachment: fixed;
 }

@@ -1,5 +1,30 @@
-/* components/organisms/contacto-section.css */
+/*
+    ================================================================================
+    Componente:     Organismo - Sección de Contacto (contacto-section.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define el estilo de fondo para el contenedor principal de la
+                    sección de "Contacto" (<section id="contacto">). Su principal
+                    característica es la implementación de un fondo con
+                    efecto de paralaje.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * #contacto: Selector de ID para la sección de contacto.
+ * -----------------------------------------------------------------------------
+ * Aplica un fondo de imagen con un efecto visual distintivo.
+ * - `background-image`: Establece la imagen de fondo específica para esta sección.
+ * - `background-size: cover`: Asegura que la imagen de fondo cubra
+ *   completamente el área de la sección, escalándose sin distorsión.
+ * - `background-position: center`: Centra la imagen de fondo, lo que ayuda a
+ *   mantener el punto focal de la imagen visible.
+ * - `background-attachment: fixed`: **Propiedad clave para el efecto de
+ *   paralaje.** Fija la imagen de fondo con respecto a la ventana del
+- *   navegador. Como resultado, la imagen permanece estática mientras el
+ *   contenido de la página se desplaza sobre ella, creando una ilusión de
+ *   profundidad.
+ */
 #contacto {
     background-image: url('../../assets/images/nube.png');
     background-size: cover;

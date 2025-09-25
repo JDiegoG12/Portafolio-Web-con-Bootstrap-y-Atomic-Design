@@ -1,24 +1,94 @@
-/* components/molecules/modal.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Modal de Confirmación (modal.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para un cuadro de diálogo modal personalizado.
+                    Se utiliza para solicitar la confirmación del usuario antes
+                    de realizar acciones destructivas, como eliminar contactos.
+    ================================================================================
+*/
+
+/**
+ * -----------------------------------------------------------------------------
+ * .custom-modal-overlay: La capa de fondo semitransparente.
+ * -----------------------------------------------------------------------------
+ * Cubre toda la ventana del navegador para enfocar la atención del usuario
+ * en el cuadro de diálogo modal.
+ * - `position: fixed`: Lo fija en la ventana gráfica, asegurando que cubra
+ *   toda la pantalla sin importar el scroll.
+ * - `background`: Un fondo negro semitransparente para oscurecer el contenido
+ *   principal de la página.
+ * - `display: flex`, `justify-content`, `align-items`: Centra el modal
+ *   (.custom-modal) tanto vertical como horizontalmente.
+ * - `z-index: 1050`: Un valor alto para asegurar que se muestre por encima de
+ *   todos los demás elementos de la página.
+ * - `opacity`, `transition`: Permiten una animación suave de aparición y
+ *   desaparición.
+ */
 .custom-modal-overlay {
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    display: flex; justify-content: center; align-items: center;
-    z-index: 1050; opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * Clase modificadora .hidden para el overlay.
+ * -----------------------------------------------------------------------------
+ * Controla la visibilidad y la interactividad del modal.
+ * - `opacity: 0`: Hace que el modal y su fondo sean completamente transparentes.
+ * - `pointer-events: none`: Impide que el elemento (y sus hijos) reciban
+ *   clics o cualquier otro evento del puntero. Esto es crucial para que
+ *   el overlay invisible no bloquee la interacción con la página cuando
+ *   el modal está cerrado.
+ */
 .custom-modal-overlay.hidden {
     opacity: 0;
     pointer-events: none;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .custom-modal: La ventana de diálogo del modal.
+ * -----------------------------------------------------------------------------
+ * Es el contenedor visible con el mensaje y los botones de acción.
+ * - `background`, `padding`, `border-radius`, `box-shadow`: Definen la
+ *   apariencia de "tarjeta flotante" del modal.
+ * - `max-width`, `width`: Hacen que el modal sea responsivo, ocupando el 90%
+ *   del ancho en pantallas pequeñas, pero sin exceder los 400px en pantallas
+ *   grandes.
+ */
 .custom-modal {
     background: var(--color-white);
-    padding: 2rem; border-radius: 15px;
+    padding: 2rem;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    text-align: center; max-width: 400px;
+    text-align: center;
+    max-width: 400px;
     width: 90%;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .modal-actions: Contenedor para los botones del modal.
+ * -----------------------------------------------------------------------------
+ * Organiza los botones ("Confirmar", "Cancelar") en una fila centrada.
+ * - `display: flex`, `justify-content: center`: Centra los botones
+ *   horizontalmente.
+ * - `gap`: Añade un espacio consistente entre los botones.
+ */
 .modal-actions {
     margin-top: 1.5rem;
-    display: flex; justify-content: center; gap: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }

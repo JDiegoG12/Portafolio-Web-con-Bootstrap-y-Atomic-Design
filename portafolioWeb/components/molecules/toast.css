@@ -1,16 +1,87 @@
-/* components/molecules/toast.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Notificación Toast (toast.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para una notificación emergente ("toast")
+                    que aparece en la esquina de la pantalla para dar feedback
+                    al usuario (ej. "Contacto guardado con éxito").
+    ================================================================================
+*/
+
+/**
+ * -----------------------------------------------------------------------------
+ * .toast-notification: Clase base para el componente de notificación.
+ * -----------------------------------------------------------------------------
+ * - `position: fixed`: Fija la notificación en la ventana del navegador,
+ *   independientemente del scroll de la página.
+ * - `top: 20px; right: 20px`: La posiciona en la esquina superior derecha.
+ * - `background-color`, `color`, `padding`, `box-shadow`: Definen el
+ *   estilo visual base de la notificación.
+ * - `display: flex`, `align-items: center`, `gap`: Organizan el contenido
+ *   interno (icono y texto) en una fila alineada y con espaciado.
+ * - `z-index: 1100`: Un valor muy alto para asegurar que la notificación
+ *   aparezca por encima de todos los demás elementos, incluyendo el modal.
+ * - `transform: translateX(calc(100% + 20px))`: **Estado inicial clave.**
+ *   Esta regla posiciona la notificación completamente fuera del área visible
+ *   a la derecha, preparándola para la animación de entrada.
+ * - `transition`: Define una animación suave para la propiedad `transform`,
+ *   creando el efecto de deslizamiento.
+ */
 .toast-notification {
-    position: fixed; top: 20px; right: 20px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
     background-color: var(--color-bg-dark);
     color: var(--color-white);
-    padding: 1rem 1.5rem; border-radius: 10px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    display: flex; align-items: center; gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     z-index: 1100;
     transform: translateX(calc(100% + 20px));
     transition: transform 0.4s ease-in-out;
 }
-.toast-notification.show { transform: translateX(0); }
-.toast-notification.success { background-color: #28a745; }
-.toast-notification.error { background-color: #dc3545; }
-.toast-notification p { margin: 0; }
+
+/**
+ * -----------------------------------------------------------------------------
+ * Clases Modificadoras para controlar el estado y la apariencia.
+ * -----------------------------------------------------------------------------
+ */
+
+/*
+ * .show: Clase de estado, añadida mediante JavaScript.
+ * Al agregar esta clase, la transformación se revierte a `translateX(0)`,
+ * lo que anima la notificación para que se deslice a su posición visible.
+ */
+.toast-notification.show {
+    transform: translateX(0);
+}
+
+/*
+ * .success: Clase modificadora de apariencia.
+ * Sobrescribe el color de fondo para indicar un mensaje de éxito.
+ */
+.toast-notification.success {
+    background-color: #28a745; /* Verde estándar para éxito */
+}
+
+/*
+ * .error: Clase modificadora de apariencia.
+ * Sobrescribe el color de fondo para indicar un mensaje de error.
+ */
+.toast-notification.error {
+    background-color: #dc3545; /* Rojo estándar para error */
+}
+
+/**
+ * -----------------------------------------------------------------------------
+ * Estilo para el párrafo dentro de la notificación.
+ * -----------------------------------------------------------------------------
+ * Elimina el margen por defecto del párrafo para asegurar una alineación
+ * vertical precisa dentro del contenedor flex.
+ */
+.toast-notification p {
+    margin: 0;
+}

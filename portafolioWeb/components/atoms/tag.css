@@ -1,32 +1,69 @@
-/* components/atoms/tag.css */
+/*
+    ================================================================================
+    Componente:     Átomo - Etiqueta (tag.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para las etiquetas (tags) y su contenedor.
+                    Las etiquetas se utilizan principalmente en las tarjetas de
+                    proyectos para listar las tecnologías o habilidades empleadas.
+    ================================================================================
+*/
 
-/* El contenedor de las etiquetas */
+/**
+ * -----------------------------------------------------------------------------
+ * .tag-list: Contenedor para un grupo de etiquetas.
+ * -----------------------------------------------------------------------------
+ * - `list-style: none`, `padding: 0`: Eliminan los estilos por defecto de
+ *   una lista no ordenada (<ul>) para un control de diseño completo.
+ * - `display: flex`: Activa el modelo Flexbox para alinear las etiquetas
+ *   en una sola línea por defecto.
+ * - `flex-wrap: wrap`: Permite que las etiquetas pasen a la siguiente línea
+ *   si no hay suficiente espacio horizontal, asegurando la responsividad.
+ * - `gap`: Define un espaciado consistente y limpio entre cada etiqueta.
+ */
 .tag-list {
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem; /* Espaciado entre etiquetas */
+    gap: 0.5rem;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .tag: Estilo para una etiqueta individual.
+ * -----------------------------------------------------------------------------
+ * Define la apariencia de una sola etiqueta, dándole forma de "píldora".
+ * - `background-color`, `color`, `border`: Utilizan la paleta de colores
+ *   primaria del sitio para crear un diseño coherente y de bajo contraste.
+ * - `font-weight`, `font-size`, `text-transform`, `letter-spacing`: Ajustes
+ *   tipográficos para asegurar la legibilidad y un estilo visual pulcro.
+ * - `padding`: Espaciado interno que da "aire" al texto dentro de la etiqueta.
+ * - `border-radius: 50px`: Crea la forma de píldora con bordes completamente
+ *   redondeados.
+ * - `transition`: Suaviza el cambio de color en el estado :hover.
+ */
 .tag {
-    /* CAMBIO CLAVE: Fondo verde pálido */
-    background-color: #f1f3ed; 
-    /* CAMBIO CLAVE: Texto verde principal */
-    color: #6d7846; 
+    background-color: #f1f3ed;
+    color: #6d7846;
     font-weight: 600;
     padding: 0.4rem 0.9rem;
-    border-radius: 50px; 
+    border-radius: 50px;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    /* CAMBIO CLAVE: Borde verde claro */
     border: 1px solid #dde0d6;
     transition: all 0.3s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * :hover pseudo-clase para .tag.
+ * -----------------------------------------------------------------------------
+ * Proporciona feedback visual al usuario. Al pasar el cursor, la etiqueta
+ * invierte sus colores, adoptando un fondo sólido con texto blanco,
+ * lo que indica claramente que es un elemento con el que se puede interactuar.
+ */
 .tag:hover {
-    /* CAMBIO CLAVE: El fondo se vuelve verde sólido al pasar el mouse */
     background-color: #6d7846;
     color: var(--color-white);
     border-color: #6d7846;

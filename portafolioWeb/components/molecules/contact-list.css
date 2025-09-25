@@ -1,5 +1,27 @@
-/* components/molecules/contact-list.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Lista de Contactos (contact-list.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para el contenedor y los elementos de la
+                    lista donde se muestran los contactos guardados. Implementa un
+                    diseño de "glassmorphism" para un efecto visual moderno.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .list-container: Contenedor principal de la lista de contactos.
+ * -----------------------------------------------------------------------------
+ * Crea un panel con efecto de vidrio esmerilado.
+ * - `background`: Un fondo blanco semitransparente.
+ * - `backdrop-filter: blur(8px)`: Aplica un desenfoque a todo lo que está
+ *   detrás del elemento, creando el efecto de vidrio.
+ * - `-webkit-backdrop-filter`: Prefijo para compatibilidad con navegadores
+ *   basados en WebKit (como Safari).
+ * - `border`: Un borde muy sutil que define los límites del contenedor.
+ * - `padding`, `border-radius`: Proporcionan espaciado interno y esquinas
+ *   suavizadas.
+ */
 .list-container {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(8px);
@@ -10,24 +32,57 @@
     height: 100%;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .list-title: Título dentro del contenedor de la lista.
+ * -----------------------------------------------------------------------------
+ * Estilo para el encabezado "Contactos Guardados", dándole peso visual.
+ */
 .list-title {
     color: var(--color-bg-dark);
     font-weight: 700;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .contact-item: Estilo para un elemento individual (<li>) en la lista.
+ * -----------------------------------------------------------------------------
+ * Define la apariencia de cada tarjeta de contacto.
+ * - `!important`: Se utiliza para sobrescribir los estilos por defecto del
+ *   componente .list-group-item de Bootstrap, asegurando la aplicación
+ *   de nuestro diseño personalizado.
+ * - `position: relative`: Esencial para permitir el posicionamiento absoluto
+ *   del contenedor de acciones (.contact-actions).
+ * - `padding-right`: Crea un espacio a la derecha para evitar que el texto
+ *   se superponga con los botones de acción.
+ */
 .contact-item {
     background-color: rgba(255, 255, 255, 0.7) !important;
     border-radius: 10px !important;
     margin-bottom: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.08) !important;
     position: relative;
-    padding-right: 4rem; /* Espacio para los botones */
+    padding-right: 4rem;
 }
 
+/*
+ * Sobrescribe la clase de utilidad de Bootstrap para asegurar que los iconos
+ * usen el color primario definido en nuestras variables CSS.
+ */
 .contact-item .text-primary {
     color: var(--color-primary) !important;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * .contact-actions: Contenedor para los botones de "Editar" y "Eliminar".
+ * -----------------------------------------------------------------------------
+ * - `position: absolute`: Posiciona este contenedor relativo a su padre
+ *   (.contact-item).
+ * - `top: 50%`, `right: 1rem`, `transform: translateY(-50%)`: Una técnica
+ *   común para centrar verticalmente un elemento y alinearlo a la derecha.
+ * - `display: flex`, `gap`: Organiza los botones en una fila con espaciado.
+ */
 .contact-actions {
     position: absolute;
     top: 50%;
@@ -37,12 +92,22 @@
     gap: 0.5rem;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * Estilos para los botones de acción individuales (iconos).
+ * -----------------------------------------------------------------------------
+ */
 .btn-icon {
     color: var(--color-text);
+    transition: color 0.2s ease; /* Añadimos una transición suave */
 }
+
+/* Efecto hover general para los botones de icono */
 .btn-icon:hover {
     color: var(--color-primary);
 }
+
+/* Efecto hover específico para el botón de eliminar, usando un color de peligro */
 .btn-icon.delete-btn:hover {
     color: #dc3545;
 }

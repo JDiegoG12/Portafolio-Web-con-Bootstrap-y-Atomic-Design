@@ -1,4 +1,27 @@
-/* components/organisms/header.css */
+/*
+    ================================================================================
+    Componente:     Organismo - Encabezado (header.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para el encabezado principal del sitio,
+                    que incluye la barra de navegación. Está diseñado para ser
+                    fijo ("sticky") y cambiar su apariencia al desplazarse
+                    por la página.
+    ================================================================================
+*/
+
+/**
+ * -----------------------------------------------------------------------------
+ * .header-container: El contenedor principal del encabezado.
+ * -----------------------------------------------------------------------------
+ * - `position: fixed`: Fija el encabezado en la parte superior de la ventana
+ *   gráfica, de modo que permanece visible durante el desplazamiento.
+ * - `z-index: 1030`: Un valor alto (estándar de Bootstrap para navbars) que
+ *   asegura que el encabezado se muestre por encima de otros contenidos.
+ * - `background-color: transparent`: El estado inicial del encabezado es
+ *   transparente para integrarse con la sección "hero" inicial.
+ * - `transition`: Define una animación suave para los cambios de propiedades
+ *   cuando se añade la clase .scrolled.
+ */
 .header-container {
     position: fixed;
     top: 0;
@@ -7,21 +30,52 @@
     background-color: transparent;
     transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .scrolled: Clase de estado (añadida con JavaScript).
+ * -----------------------------------------------------------------------------
+ * Define la apariencia del encabezado después de que el usuario se ha
+ * desplazado una cierta distancia hacia abajo en la página.
+ * - `background-color`: Cambia a un fondo blanco semitransparente.
+ * - `backdrop-filter`: Aplica un efecto de desenfoque (glassmorphism) al
+ *   contenido que pasa por debajo del encabezado.
+ * - `box-shadow`: Añade una sombra sutil para dar profundidad y separar
+ *   visualmente el encabezado del contenido.
+ */
 .header-container.scrolled {
-    background-color: rgba(255, 255, 255, 0.85); /* <-- ESTE ES EL CAMBIO */
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
+
+/*
+ * Establece una altura mínima para la barra de navegación usando una variable CSS.
+ */
 .navbar {
     min-height: var(--navbar-height);
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .navbar-brand-custom: Estilo para la marca o logo del sitio.
+ * -----------------------------------------------------------------------------
+ */
 .navbar-brand-custom {
     font-family: var(--font-artistic);
     font-size: 2.5rem;
     color: var(--color-bg-dark);
     text-decoration: none;
+    transition: font-size 0.3s ease; /* Anima el cambio de tamaño en móvil */
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .nav-link: Estilos para los enlaces de navegación.
+ * -----------------------------------------------------------------------------
+ * - `position: relative`: Necesario para posicionar el pseudo-elemento '::after'.
+ */
 .nav-link {
     color: var(--color-bg-dark);
     font-weight: 600;
@@ -31,6 +85,11 @@
     padding: 0.5rem 0;
     margin: 0 0.75rem;
 }
+
+/*
+ * ::after pseudo-elemento: Crea el subrayado animado.
+ * Inicialmente tiene un ancho de 0, haciéndolo invisible.
+ */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -41,15 +100,72 @@
     background-color: var(--color-primary);
     transition: width 0.3s ease;
 }
+
+/*
+ * Al pasar el cursor (:hover) o cuando el enlace está activo (.active),
+ * el ancho del pseudo-elemento se expande al 100%, creando la animación.
+ */
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .navbar-toggler: Estilos para el botón del menú móvil ("hamburguesa").
+ * -----------------------------------------------------------------------------
+ */
 .navbar-toggler {
     border: none;
     font-size: 1.5rem;
     color: var(--color-bg-dark);
 }
+
 .navbar-toggler:focus {
-    box-shadow: none;
+    box-shadow: none; /* Elimina el resplandor de foco por defecto */
+}
+
+/**
+ * =============================================================================
+ * AJUSTES RESPONSIVOS PARA DISPOSITIVOS MÓVILES
+ * =============================================================================
+ */
+@media (max-width: 576px) {
+    /*
+     * Reduce el tamaño de la fuente de la marca para evitar que ocupe
+     * demasiado espacio en pantallas estrechas.
+     */
+    .navbar-brand-custom {
+        font-size: 2rem;
+    }
+
+    /*
+     * Mejora la apariencia del menú desplegable cuando está abierto.
+     * Le da un fondo, padding, bordes redondeados y sombra para que se
+     * destaque como un panel de navegación distinto.
+     */
+    .navbar-collapse {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        margin: 0 -0.75rem; /* El margen negativo permite que ocupe todo el ancho */
+        padding: 1rem 1.5rem 1.5rem;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /*
+     * Centra los elementos de la lista de navegación.
+     */
+    .navbar-collapse .navbar-nav {
+        text-align: center;
+    }
+
+    /*
+     * Aumenta el espaciado vertical de los enlaces para que sean más
+     * fáciles de tocar en pantallas táctiles (mejora de la usabilidad).
+     */
+    .navbar-collapse .nav-link {
+        padding: 0.75rem 0;
+    }
 }

@@ -1,4 +1,31 @@
+/*
+    ================================================================================
+    Componente:     Organismo - Sección de Pasatiempos (pasatiempos-section.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define el estilo de fondo para el contenedor principal de la
+                    sección "Pasatiempos" (<section id="pasatiempos">). Al igual
+                    que la sección de contacto, implementa un fondo con efecto
+                    de paralaje para crear una experiencia visual dinámica.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * #pasatiempos: Selector de ID para la sección de pasatiempos.
+ * -----------------------------------------------------------------------------
+ * Aplica una imagen de fondo con un efecto de paralaje.
+ * - `background-image`: Especifica la ruta a la imagen que se usará de fondo.
+ * - `background-size: cover`: Redimensiona la imagen para que cubra
+ *   completamente el área de la sección, manteniendo su proporción.
+ * - `background-position: center`: Centra la imagen de fondo dentro de la
+ *   sección.
+ * - `background-attachment: fixed`: Esta es la propiedad esencial que genera
+ *   el efecto de paralaje. Fija la posición de la imagen de fondo con
+ *   respecto a la ventana del navegador, de modo que la imagen no se
+ *   desplaza con el resto de la página. Esto crea la ilusión de que el
+ *   contenido se desliza por encima de un fondo estático, añadiendo
+ *   profundidad al diseño.
+ */
 #pasatiempos {
     background-image: url('../../assets/images/nube.png');
     background-size: cover;

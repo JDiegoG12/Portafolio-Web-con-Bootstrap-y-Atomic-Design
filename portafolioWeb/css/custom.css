@@ -1,25 +1,78 @@
-/* css/custom.css */
+/*
+    ================================================================================
+    Archivo:        custom.css
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Este archivo es el núcleo del sistema de diseño del sitio.
+                    Define las variables CSS globales (custom properties) para
+                    colores, tipografías y tamaños, así como los estilos base
+                    que se aplican a toda la página.
+    ================================================================================
+*/
+
+/**
+ * -----------------------------------------------------------------------------
+ * :root - Definición de Variables CSS Globales
+ * -----------------------------------------------------------------------------
+ * El pseudo-selector :root define variables que son accesibles en todo el
+ * documento. Centralizar estos valores permite un mantenimiento sencillo
+ * y garantiza la consistencia visual en todo el proyecto.
+ */
 :root {
-    --color-bg-light: #FAF8F5;
-    --color-bg-dark: #334231;
-    --color-primary: #869684;
-    --color-text: #5c5c5c;
-    --color-white: #FFFFFF;
-    --font-primary: 'Poppins', sans-serif;
-    --font-artistic: 'Great Vibes', cursive;
-    --navbar-height: 80px;
+    /* Paleta de Colores */
+    --color-bg-light: #FAF8F5;      /* Fondo claro, blanco roto */
+    --color-bg-dark: #334231;       /* Fondo oscuro, verde profundo */
+    --color-primary: #869684;       /* Color de acento principal, verde salvia */
+    --color-text: #5c5c5c;          /* Color de texto principal para párrafos */
+    --color-white: #FFFFFF;         /* Blanco puro */
+
+    /* Tipografía */
+    --font-primary: 'Poppins', sans-serif;  /* Fuente principal para legibilidad */
+    --font-artistic: 'Great Vibes', cursive;/* Fuente decorativa para títulos */
+
+    /* Dimensiones y Espaciado */
+    --navbar-height: 80px;          /* Altura base de la barra de navegación */
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * Corrección Global de Desbordamiento Horizontal
+ * -----------------------------------------------------------------------------
+ * Previene la aparición de una barra de desplazamiento horizontal no deseada.
+ * Este problema es común cuando se utilizan librerías de animación (como AOS)
+ * o cuando algunos elementos exceden ligeramente el ancho de la ventana.
+ * Aplicar `overflow-x: hidden` a `html` y `body` es una solución robusta
+ * que garantiza la máxima compatibilidad entre navegadores.
+ */
+html, body {
+    overflow-x: hidden;
+}
+
+/**
+ * -----------------------------------------------------------------------------
+ * Estilos Base para el <body>
+ * -----------------------------------------------------------------------------
+ * Define la apariencia por defecto para toda la página.
+ */
 body {
     font-family: var(--font-primary);
-    /* ======================================== */
-    /* ¡CAMBIO CLAVE! APLICAMOS EL FONDO CON TEXTURA AQUÍ */
-    /* ======================================== */
-    background-image: url('../assets/images/paginaInicio.png'); /* Asegúrate que la ruta sea correcta desde css/ */
+    background-image: url('../assets/images/paginaInicio.png');
     background-size: cover;
-    background-attachment: fixed; /* Mantenemos el efecto parallax */
+    background-attachment: fixed; /* Efecto de paralaje global */
     background-position: center;
     color: var(--color-text);
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * .section-container - Clase de Utilidad para Secciones
+ * -----------------------------------------------------------------------------
+ * Clase reutilizable para estandarizar el layout de las secciones principales.
+ * - `padding`: Crea un espaciado vertical consistente.
+ * - `min-height: 100vh`: Asegura que cada sección ocupe al menos la altura
+ *   completa de la pantalla, creando una experiencia de "scroll snapping" visual.
+ * - `display: flex`, `flex-direction: column`, `justify-content: center`:
+ *   Centra verticalmente el contenido dentro de cada sección.
+ */
 .section-container {
     padding: 100px 0;
     min-height: 100vh;
@@ -27,7 +80,14 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+/**
+ * -----------------------------------------------------------------------------
+ * Sobrescritura de Estilos de Bootstrap
+ * -----------------------------------------------------------------------------
+ * Anula el borde por defecto de las tablas de Bootstrap para permitir un
+ * estilo personalizado a través de clases más específicas como .styled-table.
+ */
 .table {
     border-color: transparent;
 }
-

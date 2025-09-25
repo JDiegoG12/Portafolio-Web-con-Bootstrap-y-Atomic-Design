@@ -1,8 +1,28 @@
-/* components/molecules/study-card.css */
+/*
+    ================================================================================
+    Componente:     Molécula - Tarjeta de Estudios (study-card.css)
+    Proyecto:       Portafolio Personal - Sofía Arango y Juan Diego Gómez
+    Descripción:    Define los estilos para las tarjetas utilizadas en la sección
+                    de "Nuestra Formación". Cada tarjeta encapsula el historial
+                    académico de una persona.
+    ================================================================================
+*/
 
+/**
+ * -----------------------------------------------------------------------------
+ * .study-card: El contenedor principal de la tarjeta.
+ * -----------------------------------------------------------------------------
+ * - `background-color`: Fondo blanco para el contenido.
+ * - `border`, `box-shadow`, `border-radius`: Crean el estilo visual de la
+ *   tarjeta con un borde de acento, una sombra suave y esquinas redondeadas.
+ * - `padding`: Proporciona un amplio espacio interno para el contenido.
+ * - `height: 100%`: Asegura que todas las tarjetas en una misma fila tengan
+ *   la misma altura, creando un layout uniforme.
+ * - `transition`: Anima suavemente los cambios de `transform` y `box-shadow`
+ *   durante la interacción del usuario.
+ */
 .study-card {
     background-color: var(--color-white);
-    /* CAMBIO CLAVE: Borde verde */
     border: 1px solid #6d7846;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
@@ -11,12 +31,25 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * :hover pseudo-clase para .study-card.
+ * -----------------------------------------------------------------------------
+ * Proporciona un feedback visual al elevar la tarjeta y aplicar una sombra
+ * de "resplandor" (glow) con el color de acento, mejorando la interactividad.
+ */
 .study-card:hover {
     transform: translateY(-10px);
-    /* CAMBIO CLAVE: Sombra verde */
     box-shadow: 0 10px 30px rgba(109, 120, 70, 0.2);
 }
 
+/**
+ * -----------------------------------------------------------------------------
+ * h3: Título dentro de la tarjeta de estudio.
+ * -----------------------------------------------------------------------------
+ * Estiliza el encabezado (ej. "Formación de Sofía") para una clara
+ * jerarquía visual.
+ */
 .study-card h3 {
     font-family: var(--font-primary);
     font-weight: 700;
@@ -24,4 +57,28 @@
     color: var(--color-bg-dark);
     text-align: center;
     margin-bottom: 2rem;
+}
+
+/**
+ * =============================================================================
+ * AJUSTES RESPONSIVOS PARA DISPOSITIVOS PEQUEÑOS
+ * =============================================================================
+ * Estas reglas se aplican en pantallas con un ancho máximo de 576px (móviles).
+ */
+@media (max-width: 576px) {
+    /*
+     * Se reduce el padding (relleno) interno de la tarjeta para dar más
+     * espacio horizontal al contenido (la tabla) en pantallas estrechas.
+     */
+    .study-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /*
+     * Se reduce el tamaño de la fuente del título para evitar que ocupe
+     * demasiado espacio vertical y asegurar que no se desborde.
+     */
+    .study-card h3 {
+        font-size: 1.75rem;
+    }
 }
